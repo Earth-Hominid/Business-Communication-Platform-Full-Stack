@@ -26,3 +26,34 @@ export const getServerSideProps = async () => {
     props: { articles },
   };
 };
+
+const ArticlePage: React.FC<{ articles: Array<string> }> = ({ articles }) => {
+  const background = 'bg-[#F4F0E8]';
+  const queryTerm = 'Artigos';
+  const linkTerm = '/';
+
+  if (!articles) return <div>Loading...</div>;
+
+  return (
+    <>
+      <Layout
+        title="Artigos da Rede BS"
+        description="A Rede BS publica regularmente artigos para melhorar ainda mais a formação de seus funcionários."
+        keywords="artigos, educação empresarial, educação em vendas no varejo, gestão de inventário, treinamento de atendimento ao cliente"
+        background={background}
+        mainPage="/"
+        mainPageTitle="Rede BS Docs"
+        currentPage="/articles"
+        currentPageTitle="Artigos"
+      >
+        {articles.length === 0 && <h3>No articles to show</h3>}
+
+        {articles.map((article) => (
+          <ArticleItem key={article.id} article={article} />
+        ))}
+      </Layout>
+    </>
+  );
+};
+
+export default ArticlePage;
