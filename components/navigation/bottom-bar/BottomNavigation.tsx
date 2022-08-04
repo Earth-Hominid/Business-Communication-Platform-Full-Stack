@@ -1,8 +1,8 @@
 import { useState, useContext } from 'react';
 import { useRouter } from 'next/router';
-import AuthContext from '../../context/AuthContext';
+import AuthContext from '@/context/AuthContext';
 import Link from 'next/link';
-import SearchBar from '../search-bar/SearchBar';
+import SearchBar from '../searchbar/Searchbar';
 import {
   SunIcon,
   MoonIcon,

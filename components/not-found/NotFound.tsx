@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Layout } from '../layout/Layout';
+import { Layout } from '../Layout';
 import {
   MainSection,
   MainText,
