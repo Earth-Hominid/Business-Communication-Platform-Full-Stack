@@ -1,7 +1,7 @@
 import { HeaderContainer, MainSection, Title } from './Styles';
-import Report from '../report/Report';
+import ArticleCard from '../article-card/ArticleCard';
 
-const Welcome = ({ user, reports }) => {
+const Welcome = ({ user, articles }) => {
   const deleteReport = (id: string) => console.log(id);
 
   return (
@@ -10,8 +10,12 @@ const Welcome = ({ user, reports }) => {
         <Title>Bem-vindo de volta {user && user.username}!</Title>
       </HeaderContainer>
 
-      {reports.map((report) => (
-        <Report key={report.id} report={report} handleDelete={deleteReport} />
+      {articles.map((article) => (
+        <ArticleCard
+          key={article.id}
+          article={article}
+          handleDelete={deleteReport}
+        />
       ))}
     </MainSection>
   );

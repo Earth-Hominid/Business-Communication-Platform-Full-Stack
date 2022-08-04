@@ -6,9 +6,9 @@ import { API_URL } from '@/config/index';
 import { useRouter } from 'next/router';
 import Welcome from '@/components/dashboard/welcome-page/Welcome';
 import qs from 'qs';
-import ReportTemplate from '@/components/dashboard/report/Report';
+import ReportTemplate from '@/components/dashboard/article-card/ArticleCard';
 
-const DashboardPage = ({ reports }) => {
+const DashboardPage = ({ articles, token }) => {
   const [initialPage, setInitialPage] = useState(true);
   const [modal, setModal] = useState(false);
   const { user } = useContext(AuthContext);
@@ -30,10 +30,10 @@ const DashboardPage = ({ reports }) => {
       mainPage="/"
       mainPageTitle="Rede BS docs"
       currentPage="#"
-      styles="pb-10"
+      styles="pb-10 p-2 sm:flex sm:justify-center"
       currentPageTitle={user !== null ? `Painel de ${user.username}` : ''}
     >
-      <Welcome user={user} reports={reports} />
+      <Welcome user={user} articles={articles} />
     </Layout>
   );
 };
@@ -43,32 +43,20 @@ export default DashboardPage;
 export const getServerSideProps = async ({ req }: { req: any }) => {
   const { token } = parseCookies(req);
 
-  const queryDeep = qs.stringify(
-    {
-      populate: '*',
-    },
-    {
-      encodeValuesOnly: true, // prettify URL
-    }
-  );
-
   // Fetch all reports
-  const res = await fetch(`${API_URL}/api/reports/me`, {
+  const res = await fetch(`${API_URL}/articles/me`, {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${token}`,
     },
   });
 
-  const responseData = await res.json();
-
-  const reports = responseData.data.attributes.data;
-
-  console.log(reports);
+  const articles = await res.json();
 
   return {
     props: {
-      reports,
+      articles,
+      token,
     },
   };
 };

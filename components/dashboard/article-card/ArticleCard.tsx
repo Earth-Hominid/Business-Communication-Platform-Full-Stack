@@ -14,23 +14,21 @@ import {
 } from './Styles';
 import Image from 'next/image';
 
-const ReportTemplate = ({ report, handleDelete }) => {
-  const data = report.attributes;
-
+const ArticleCard = ({ article, handleDelete }) => {
   return (
     <>
       <MainContainer>
         <div>
-          <SmallTitle>{`${data.category} / ${data.store}`}</SmallTitle>
-          <Link href={`/reports/${report.slug}`}>
+          <SmallTitle>{`${article.category} / ${article.store}`}</SmallTitle>
+          <Link href={`/articles/${article.slug}`}>
             <a>
-              <LargeTitle> {data.title}</LargeTitle>
+              <LargeTitle> {article.title}</LargeTitle>
             </a>
           </Link>
 
-          <ContentParagraph>{data.description}</ContentParagraph>
+          <ContentParagraph>{article.description}</ContentParagraph>
           <FooterContainer>
-            <Link href={`/reports/edit/${report.slug}`}>
+            <Link href={`/articles/edit/${article.slug}`}>
               <a>
                 <IconButton>
                   <IconContainer>
@@ -40,7 +38,7 @@ const ReportTemplate = ({ report, handleDelete }) => {
                 </IconButton>
               </a>
             </Link>
-            <RedIconButton onClick={() => handleDelete(report.id)}>
+            <RedIconButton onClick={() => handleDelete(article.id)}>
               <IconContainer>
                 <TrashIcon />
               </IconContainer>
@@ -48,7 +46,7 @@ const ReportTemplate = ({ report, handleDelete }) => {
             </RedIconButton>
 
             <FooterText>{`Publicados: ${new Date(
-              data.createdAt
+              article.createdAt
             ).toDateString()}`}</FooterText>
           </FooterContainer>
         </div>
@@ -57,4 +55,4 @@ const ReportTemplate = ({ report, handleDelete }) => {
   );
 };
 
-export default ReportTemplate;
+export default ArticleCard;
