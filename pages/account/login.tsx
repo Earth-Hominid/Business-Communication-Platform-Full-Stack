@@ -1,5 +1,5 @@
-import AuthContext from '../../context/AuthContext';
-import { ToastContainer, toast, useToast } from 'react-toastify';
+import AuthContext from '@/context/AuthContext';
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useState, useEffect, useContext } from 'react';
 import Link from 'next/link';
@@ -41,6 +41,7 @@ const LoginPage = () => {
       mainPageTitle="Rede BS docs"
       currentPage="#"
       currentPageTitle="Página de login"
+      styles="p-2 sm:flex sm:justify-center"
     >
       <StyledContainer>
         <InsideContainer>

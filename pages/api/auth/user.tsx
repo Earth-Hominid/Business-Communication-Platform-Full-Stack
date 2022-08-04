@@ -11,7 +11,7 @@ const strapiUser = async (req: NextApiRequest, res: NextApiResponse) => {
     }
     const { token } = cookie.parse(req.headers.cookie);
 
-    const strapiResponse = await fetch(`${API_URL}/api/users/me`, {
+    const strapiResponse = await fetch(`${API_URL}/users/me`, {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${token}`,

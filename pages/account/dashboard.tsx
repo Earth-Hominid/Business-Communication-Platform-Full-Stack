@@ -30,6 +30,7 @@ const DashboardPage = ({ reports }) => {
       mainPage="/"
       mainPageTitle="Rede BS docs"
       currentPage="#"
+      styles="pb-10"
       currentPageTitle={user !== null ? `Painel de ${user.username}` : ''}
     >
       <Welcome user={user} reports={reports} />
@@ -52,7 +53,7 @@ export const getServerSideProps = async ({ req }: { req: any }) => {
   );
 
   // Fetch all reports
-  const res = await fetch(`${API_URL}/api/reports/me?populate=*`, {
+  const res = await fetch(`${API_URL}/api/reports/me`, {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${token}`,

@@ -1,19 +1,20 @@
-import { API_URL } from '@/config/index';
 import cookie from 'cookie';
+import { API_URL } from '@/config/index';
 
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-const loginUser = async (req: NextApiRequest, res: NextApiResponse) => {
+const strapiRegister = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'POST') {
-    const { identifier, password } = req.body;
+    const { username, email, password } = req.body;
 
-    const strapiResponse = await fetch(`${API_URL}/auth/local`, {
+    const strapiResponse = await fetch(`${API_URL}/auth/local/register`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        identifier,
+        username,
+        email,
         password,
       }),
     });
@@ -21,7 +22,7 @@ const loginUser = async (req: NextApiRequest, res: NextApiResponse) => {
     const data = await strapiResponse.json();
 
     if (strapiResponse.ok) {
-      // set cookie
+      // Set cookie
       res.setHeader(
         'Set-Cookie',
         cookie.serialize('token', data.jwt, {
@@ -35,11 +36,12 @@ const loginUser = async (req: NextApiRequest, res: NextApiResponse) => {
 
       res.status(200).json({ user: data.user });
     } else {
-      res.status(data.error.status).json({ message: data.error.message });
+      res
+        .status(data.statusCode)
+        .json({ message: data.message[0].messages[0].message });
     }
   } else {
     res.setHeader('Allow', ['POST']);
     res.status(405).json({ message: `Method ${req.method} not allowed` });
   }
 };
-export default loginUser;

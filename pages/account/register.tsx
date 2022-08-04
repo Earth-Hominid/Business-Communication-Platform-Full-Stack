@@ -58,6 +58,7 @@ const RegisterPage = () => {
       mainPageTitle="Rede BS docs"
       currentPage="#"
       currentPageTitle="Página de registro"
+      styles="p-2 sm:flex sm:justify-center"
     >
       <StyledContainer>
         <InsideContainer>
