@@ -6,7 +6,8 @@
       "@/config/*": ["config/*"],
       "@/styles/*": ["styles/*"],
       "@/context/*": ["context/*"],
-      "@/helpers/*": ["helpers/*"]
+      "@/helpers/*": ["helpers/*"],
+      "@/public/*": ["public/*"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],

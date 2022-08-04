@@ -1,12 +1,12 @@
 import type { NextPage } from 'next';
+import Link from 'next/link';
 import Head from 'next/head';
-import Image from 'next/image';
 import { Layout } from '@/components/Layout';
-// import Homepage from '@/components/homepage/Homepage';
+import Homepage from '@/components/homepage/Homepage';
 import { API_URL } from '@/config/index';
 import ArticleItem from '@/components/articles/article-item/ArticleItem';
 
-const HomePage: NextPage = () => {
+const HomePage: NextPage = ({ articles }) => {
   return (
     <>
       <Head>
@@ -28,11 +28,17 @@ const HomePage: NextPage = () => {
           currentPageTitle="Rede BS Docs"
         >
           <Homepage />
-          {articlesData.length === 0 && <h3>No courses available</h3>}
+          {articles.length === 0 && <h3>No articles available</h3>}
 
-          {articlesData.map((article) => (
+          {/* {articles.map((article: any) => (
             <ArticleItem key={article.id} article={article} />
-          ))}
+          ))} */}
+
+          {/* {articles.length > 0 && (
+            <Link href="/articles">
+              <a>View All Articles</a>
+            </Link>
+          )} */}
         </Layout>
       </div>
     </>
@@ -41,13 +47,12 @@ const HomePage: NextPage = () => {
 
 export default HomePage;
 
-export async function getServerSideProps() {
-  // fetch courses
-  let res = await fetch(`${API_URL}/api/articles?populate=*`);
-  let articles = await res.json();
-  let articlesData = articles.data;
+export async function getStaticProps() {
+  const res = await fetch(`${API_URL}/articles`);
+  const articles = await res.json();
 
   return {
-    props: { articlesData },
+    props: { articles },
+    revalidate: 1,
   };
 }
