@@ -1,54 +1,40 @@
 import tw from 'tailwind-styled-components';
 
-export const TopHeading = tw.div`
-  flex
-  flex-row
-  w-full
-  items-center
-  py-6
-  px-5
-  justify-between
-  text-xs
-  uppercase
-  font-[Montserrat]
-  md:p-10
-  lg:px-20
+export const Container = tw.div`
+w-full
+flex
+flex-1
+bg-yellow-50
+border-t
+border-b
+border-gray-400
 `;
 
-export const InformationContainer = tw.div`
+export const SpacingContainer = tw.div`
   flex 
   flex-row 
-  space-x-4
-  items-center
+  flex-1 
+  items-center 
+  text-gray-600s
+  font-montserrat
+  space-x-2
+  text-sm
+  md:text-base
+  md:space-x-4
+  py-1
+  px-2
+  mx-2
 `;
 
-export const DirectionContainer = tw.div`
-  flex
-  flex-row
-  items-center
-  rounded-md
-  bg-black
-  text-[#FEF336]
-  px-2
-  py-1
-  hover:bg-transparent
-  hover:text-black
-  duration-400
-  transition
-  ease-in-out
+export const MainPageText = tw.p`
+  cursor-pointer
+`;
+export const CurrentPageText = tw.p`
   cursor-pointer
 `;
 
-export const IconContainer = tw.div`
+export const IconHolder = tw.div`
   w-5
   h-5
-  mr-1
-`;
-
-export const StoreLogo = tw.div`
-  rounded-md
-  bg-[#EDBD77]
-  text-white
-  px-2
-  py-1
+  text-gray-600
 `;

@@ -1,30 +1,42 @@
 import Link from 'next/link';
-import { ArrowCircleLeftIcon } from '@heroicons/react/outline';
-
 import {
-  TopHeading,
-  DirectionContainer,
-  IconContainer,
-  InformationContainer,
-  StoreLogo,
+  Container,
+  MainPageText,
+  CurrentPageText,
+  SpacingContainer,
+  IconHolder,
 } from './Styles';
 
-const ToolBar = ({ queryTerm, linkTerm }) => {
-  return (
-    <TopHeading>
-      <InformationContainer>
-        <StoreLogo>{queryTerm}</StoreLogo>
-      </InformationContainer>
+import { ChevronDoubleRightIcon } from '@heroicons/react/outline';
 
-      <Link href={linkTerm}>
-        <DirectionContainer>
-          <IconContainer>
-            <ArrowCircleLeftIcon />
-          </IconContainer>
-          Volta
-        </DirectionContainer>
-      </Link>
-    </TopHeading>
+const ToolBar = ({
+  mainPage,
+  currentPage,
+  mainPageTitle,
+  currentPageTitle,
+}) => {
+  return (
+    <>
+      <Container>
+        <SpacingContainer>
+          <Link href={mainPage}>
+            <MainPageText>{mainPageTitle}</MainPageText>
+          </Link>
+          {currentPageTitle == 'Rede BS Docs' ? (
+            ''
+          ) : (
+            <>
+              <IconHolder>
+                <ChevronDoubleRightIcon />
+              </IconHolder>
+              <Link href={currentPage}>
+                <CurrentPageText>{currentPageTitle}</CurrentPageText>
+              </Link>
+            </>
+          )}
+        </SpacingContainer>
+      </Container>
+    </>
   );
 };
 

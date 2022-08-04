@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import AuthContext from '@/context/AuthContext';
 import Link from 'next/link';
 import SearchBar from '../searchbar/Searchbar';
+import MenuAccordian from './accordian/MenuAccordian';
 import {
   SunIcon,
   MoonIcon,
@@ -10,7 +11,7 @@ import {
   DesktopComputerIcon,
   LogoutIcon,
 } from '@heroicons/react/outline';
-import MenuAccordian from './accordian/MenuAccordian';
+
 import {
   BottomNavigationMenu,
   ActionButtonHolder,
@@ -60,10 +61,10 @@ const BottomNavigation = () => {
       {
         name: 'Eletromóveis',
         id: '1',
-        url: '/lojas/eletromoveis',
+        url: '#',
       },
-      { name: 'Farmácia', id: '2', url: '/lojas/farmacia' },
-      { name: 'Supermercado', id: '3', url: '/lojas/supermercado' },
+      { name: 'Farmácia', id: '2', url: '#' },
+      { name: 'Supermercado', id: '3', url: '#' },
     ],
   };
 
@@ -88,7 +89,7 @@ const BottomNavigation = () => {
         )} */}
         {user ? (
           <>
-            <Link href="/reports/addreport">
+            <Link href="/reports/add">
               <CreateSubforumButton>
                 <IconWrap>
                   <DocumentAddIcon />

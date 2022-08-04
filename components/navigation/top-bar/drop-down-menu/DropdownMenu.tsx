@@ -19,7 +19,7 @@ const DropdownMenu = () => {
     <MenuContainer>
       {user ? (
         <>
-          <Link href="/reports/addreport">
+          <Link href="/reports/add">
             <ButtonHolder>
               <IconHolder>
                 <DocumentAddIcon />
@@ -60,23 +60,23 @@ const DropdownMenu = () => {
       )}
       <MenuList />
       <MenuHeader>Aprendendo</MenuHeader>
-      <Link href="/lojas/eletromoveis">
+      <Link href="#">
         <ButtonHolder>
           <p className="ml-1">Eletromóveis</p>
         </ButtonHolder>
       </Link>
-      <Link href="/lojas/farmacia">
+      <Link href="#">
         <ButtonHolder>
           <p className="ml-1">Farmácia</p>
         </ButtonHolder>
       </Link>
-      <Link href="/lojas/supermercado">
+      <Link href="#">
         <ButtonHolder>
           <p className="ml-1">Supermercado</p>
         </ButtonHolder>
       </Link>
       <MenuList />
-      <MenuHeader>Rede BS</MenuHeader>{' '}
+      <MenuHeader>Rede BS</MenuHeader>
       <Link href="/about">
         <ButtonHolder>
           <p className="ml-1">Sobre nós</p>
