@@ -11,8 +11,6 @@ export const MainContainer = tw.div`
   hover:bg-opacity-90
   hover:bg-yellow-50
   rounded-md
-  flex
-  flex-row
   hover:shadow-md
   font-montserrat
   hover:border-solid
@@ -21,7 +19,10 @@ export const MainContainer = tw.div`
   transition
   duration-300
   ease-in-out
-  
+`;
+
+export const CardContainer = tw.div`
+  px-4
 `;
 
 export const Card = tw.div`
@@ -65,12 +66,11 @@ export const RedIconButton = tw.button`
 `;
 
 export const IconContainer = tw.div`
-h-6
-w-5
+  h-6
+  w-5
 `;
 export const SmallTitle = tw.h3`
   uppercase
-  my-2
   text-[5%]
   font-bold
   text-slate-500
@@ -100,6 +100,11 @@ export const FooterContainer = tw.div`
   space-x-2
 `;
 
+export const HeaderContainer = tw.div`
+  flex
+  justify-end
+`;
+
 export const FooterText = tw.p`
   text-slate-400
   font-bold 
@@ -110,5 +115,15 @@ export const FooterText = tw.p`
 
 export const IconText = tw.span`
   text-xs
+`;
 
+export const CategoryPin = tw.div`
+  py-1
+  px-3
+  bg-slate-400
+  rounded-3xl
+  text-white
+  font-montserrat
+  uppercase
+  text-xs
 `;

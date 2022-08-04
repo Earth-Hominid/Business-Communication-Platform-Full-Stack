@@ -19,6 +19,15 @@ const DropdownMenu = () => {
     <MenuContainer>
       {user ? (
         <>
+          <Link href="/articles/add">
+            <ButtonHolder>
+              <IconHolder>
+                <DocumentAddIcon />
+              </IconHolder>
+
+              <p className="ml-1">Adicionar um artigo</p>
+            </ButtonHolder>
+          </Link>
           <Link href="/reports/add">
             <ButtonHolder>
               <IconHolder>
