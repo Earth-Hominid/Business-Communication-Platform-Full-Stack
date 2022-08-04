@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import TopNavigation from '../top-navigation/TopNavigation';
-import BottomNavigation from '../bottom-navigation/BottomNavigation';
-import NavToolBar from '../nav-tool-bar/NavToolBar';
+import TopNavigation from './navigation/top-bar/TopNavigation';
+import BottomNavigation from './navigation/bottom-bar/BottomNavigation';
+import NavToolBar from './navigation/tool-bar/ToolBar';
 
 interface Props {
   mainPage: string;

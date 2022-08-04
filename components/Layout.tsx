@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Header from './Header';
 import Footer from './footer/Footer';
-import Showcase from '../showcase/Showcase';
+import Showcase from './homepage/showcase/Showcase';
 import { useRouter } from 'next/router';
 
 interface Props {
