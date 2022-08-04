@@ -1,17 +1,48 @@
 import { Layout } from '@/components/Layout';
-import ArticleItem from '@/components/articles/article-item/ArticleItem';
-import { API_URL } from '@/config/index';
+import { API_URL } from 'config';
+import ArticleTemplate from '@/components/articles/article-template/ArticleTemplate';
 
-type ArticlesAPIResponse = {
+type res = {
   id: string;
   title: string;
-  content: string;
-  description: string;
-  slug: string;
-  owner: string;
   category: string;
-  published_at: string;
-  created_at: string;
-  updated_at: string;
-  image: string;
+  image: URL;
+  content: string;
+  date: string;
+  description: string;
 };
+
+export const getServerSideProps = async ({ query: { slug } }) => {
+  // fetch articles
+  const res = await fetch(`${API_URL}/articles?slug=${slug}
+  `);
+
+  const articles = await res.json();
+
+  return {
+    props: {
+      article: articles[0],
+    },
+  };
+};
+
+const ArticlePage: React.FC<{ article: Array<string> }> = ({ article }) => {
+  if (!article) return <div>Loading...</div>;
+
+  return (
+    <Layout
+      title={`${article.title}`}
+      description={`${article.description}`}
+      keywords={`${article.title}`}
+      background={`bg-[#F4F0E8]`}
+      mainPage="/articles"
+      mainPageTitle="Artigos"
+      currentPage={`#`}
+      currentPageTitle={`${article.title}`}
+    >
+      <ArticleTemplate article={article} />
+    </Layout>
+  );
+};
+
+export default ArticlePage;
