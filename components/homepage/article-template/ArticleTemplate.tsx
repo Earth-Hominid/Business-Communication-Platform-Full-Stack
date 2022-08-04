@@ -1,5 +1,5 @@
 import Image from 'next/image';
-const WhiteHorse = require('../../public/images/white-horse.jpg');
+const WhiteHorse = require('@/public/images/white-horse.jpg');
 import {
   ImageContainer,
   MainSection,
