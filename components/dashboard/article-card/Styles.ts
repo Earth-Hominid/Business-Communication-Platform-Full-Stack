@@ -125,5 +125,5 @@ export const CategoryPin = tw.div`
   text-white
   font-montserrat
   uppercase
-  text-xs
+  text-[10px]
 `;
