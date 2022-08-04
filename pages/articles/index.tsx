@@ -45,6 +45,7 @@ const ArticlePage: React.FC<{ articles: Array<string> }> = ({ articles }) => {
         mainPageTitle="Rede BS Docs"
         currentPage="/articles"
         currentPageTitle="Artigos"
+        styles="pb-10 flex justify-center"
       >
         <section className="h-screen">
           {articles.length === 0 && <h3>No articles to show</h3>}

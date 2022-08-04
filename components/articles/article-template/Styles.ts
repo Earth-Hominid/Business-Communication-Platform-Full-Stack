@@ -102,7 +102,7 @@ export const ArticleText = tw.div`
    prose
 `;
 
-export const Caption = tw.p`
+export const Caption = tw.div`
   text-[10px]
   font-['Merriweather']
   mx-5

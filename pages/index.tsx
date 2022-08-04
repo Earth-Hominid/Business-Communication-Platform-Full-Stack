@@ -26,6 +26,7 @@ const HomePage: NextPage = ({ articles }) => {
           mainPageTitle="Rede BS Docs"
           currentPage=""
           currentPageTitle="Rede BS Docs"
+          styles="pb-10 flex justify-center"
         >
           <Homepage />
           {articles.length === 0 && <h3>No articles available</h3>}
@@ -48,7 +49,7 @@ const HomePage: NextPage = ({ articles }) => {
 export default HomePage;
 
 export async function getStaticProps() {
-  const res = await fetch(`${API_URL}/articles`);
+  const res = await fetch(`${API_URL}/articles?_limit=3`);
   const articles = await res.json();
 
   return {

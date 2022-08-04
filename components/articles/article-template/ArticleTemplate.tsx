@@ -71,9 +71,7 @@ const ArticleTemplate: React.FC<{ article: string }> = ({ article }) => {
         </Caption>
         <ArticleTextContainer>
           <ArticleText>
-            <div className="prose">
-              <ReactMarkdown>{article.content}</ReactMarkdown>
-            </div>
+            <ReactMarkdown>{article.content}</ReactMarkdown>
           </ArticleText>
         </ArticleTextContainer>
       </ArticleHolder>

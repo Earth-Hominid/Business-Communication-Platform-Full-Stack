@@ -19,6 +19,7 @@ const NotFound = () => {
       mainPageTitle="Rede BS Docs"
       currentPage="#"
       currentPageTitle="404. Não encontrado"
+      styles="pb-10 flex justify-center"
     >
       <MainSection>
         <div className="flex flex-row space-x-2 items-center mb-2">

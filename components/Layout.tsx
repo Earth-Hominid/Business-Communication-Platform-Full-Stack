@@ -14,6 +14,7 @@ interface Props {
   currentPage: string;
   mainPageTitle: string;
   currentPageTitle: string;
+  styles: string;
 }
 
 export const Layout: React.FC<Props> = ({
@@ -26,6 +27,7 @@ export const Layout: React.FC<Props> = ({
   currentPage,
   mainPageTitle,
   currentPageTitle,
+  styles,
 }) => {
   const router = useRouter();
 
@@ -43,7 +45,7 @@ export const Layout: React.FC<Props> = ({
         currentPageTitle={currentPageTitle}
       />
       {router.pathname === '/' && <Showcase />}
-      <div className={`${background} pb-10 flex justify-center`}>
+      <div className={`${background} ${styles}`}>
         <div className="max-w-5xl">{children}</div>
       </div>
       <Footer />

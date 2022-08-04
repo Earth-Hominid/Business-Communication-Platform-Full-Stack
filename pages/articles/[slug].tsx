@@ -39,6 +39,7 @@ const ArticlePage: React.FC<{ article: Array<string> }> = ({ article }) => {
       mainPageTitle="Artigos"
       currentPage={`#`}
       currentPageTitle={`${article.title}`}
+      styles="pb-10 lg:flex lg:justify-center"
     >
       <section className="h-screen">
         <ArticleTemplate article={article} />
