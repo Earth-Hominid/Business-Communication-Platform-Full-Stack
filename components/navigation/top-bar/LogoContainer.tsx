@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-const Logo = require('../../public/logo.png');
+import Logo from '@/public/logo.png';
 
 import { ImageContainer } from './Styles';
 

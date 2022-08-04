@@ -1,7 +1,7 @@
 import LogoContainer from './LogoContainer';
 import NavigationButtons from './NavigationButtons';
-import DropdownContainer from './drop-down/DropdownContainer';
-import SearchBar from '../search-bar/SearchBar';
+import DropdownContainer from './drop-down-menu/DropdownContainer';
+import SearchBar from '../searchbar/Searchbar';
 
 import { HeaderContainer, ButtonContainer } from './Styles';
 
