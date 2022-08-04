@@ -31,3 +31,4 @@ The backend is written in JavaScript and built with the Strapi framework.
 - [Node](https://nodejs.org/en/)
 - [Eslint](https://eslint.org/)
 - [PostCSS](https://postcss.org/)
+- [React Markdown](https://github.com/remarkjs/react-markdown)
