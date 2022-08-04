@@ -118,6 +118,7 @@ export const DesktopAuthorDescription = tw.h3`
   mt-2
   leading-normal
   font-montserrat
+  prose
 `;
 
 export const InlineRow = tw.div`

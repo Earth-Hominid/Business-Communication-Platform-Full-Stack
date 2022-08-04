@@ -99,6 +99,7 @@ export const ArticleText = tw.div`
   text-[#1a1a1a]
   leading-8
   font-['Merriweather']
+   prose
 `;
 
 export const Caption = tw.p`
@@ -112,4 +113,5 @@ export const Caption = tw.p`
   sm:text-xs
   md:max-w-3xl
   lg:max-w-4xl
+  prose
 `;

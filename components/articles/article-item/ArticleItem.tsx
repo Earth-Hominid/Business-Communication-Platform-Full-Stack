@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import ReactMarkdown from 'react-markdown';
 
 import {
   ImageContainer,
@@ -16,7 +17,6 @@ import {
   InlineRow,
   DesktopAuthorContainer,
 } from './Styles';
-import { Url } from 'url';
 
 type article = {
   id: string;
@@ -39,13 +39,13 @@ const ArticleItem = ({ article }) => {
         <ArticleContainer>
           <ImageContainer>
             <Image
-              className="absolute rounded-md"
               src={
-                article?.image
-                  ? article.image.formats.small.url
+                article.image
+                  ? article.image.formats.medium.url
                   : '/images/report-default.jpeg'
               }
-              alt="report image"
+              className="absolute rounded-md"
+              alt="imagem do artigo"
               priority={true}
               height="100"
               width="200"
@@ -62,7 +62,7 @@ const ArticleItem = ({ article }) => {
                   <DesktopAuthorHeading></DesktopAuthorHeading>
                 </InlineRow>
                 <DesktopAuthorDescription>
-                  {article.description}
+                  <ReactMarkdown>{article.description}</ReactMarkdown>
                 </DesktopAuthorDescription>
               </DesktopAuthorContainer>
             </TextContainer>
@@ -74,7 +74,7 @@ const ArticleItem = ({ article }) => {
             <MobileAuthorHeading></MobileAuthorHeading>
           </InlineRow>
           <MobileAuthorDescription>
-            {article.description}
+            <ReactMarkdown>{article.description}</ReactMarkdown>
           </MobileAuthorDescription>
         </MobileAuthorContainer>
       </MainSection>

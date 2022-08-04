@@ -23,7 +23,23 @@ export const AuthProvider = ({ children }: { children: any }) => {
 
   // Register the user
   const register = async (user: UserInterface) => {
-    console.log(user);
+    const res = await fetch(`${NEXT_URL}/api/auth/register`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(user),
+    });
+
+    const data = await res.json();
+
+    if (res.ok) {
+      setUser(data.user);
+      router.push('/account/dashboard');
+    } else {
+      setError(data.message);
+      setError(null);
+    }
   };
   // Login the user
   const login = async ({
@@ -69,7 +85,7 @@ export const AuthProvider = ({ children }: { children: any }) => {
   };
 
   // Check if the user is already logged in
-  const checkUserLoggedIn = async () => {
+  const checkUserLoggedIn = async (user) => {
     const res = await fetch(`${NEXT_URL}/api/user`);
     const data = await res.json();
 

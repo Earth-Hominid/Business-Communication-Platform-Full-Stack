@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowCircleLeftIcon } from '@heroicons/react/outline';
 import ReactMarkdown from 'react-markdown';
 
 import {
@@ -22,60 +21,58 @@ import {
 type article = {
   id: string;
   title: string;
-  category: string;
-  cover: URL;
-  published_date: string;
   content: string;
-  date: string;
-  slug: string;
   description: string;
+  slug: string;
+  owner: string;
+  category: string;
+  published_at: string;
+  created_at: string;
+  updated_at: string;
+  image: string;
 };
 
-const ArticleTemplate: React.FC<{ article: string }> = ({ post }) => {
-  const data = post.attributes;
+const ArticleTemplate: React.FC<{ article: string }> = ({ article }) => {
+  const loaderProp = ({ src }) => {
+    return src;
+  };
 
   return (
     <MainSection>
       <TopHeading>
         <InformationContainer>
-          <StoreLogo>{data.category}</StoreLogo>
+          <StoreLogo>{article.category}</StoreLogo>
           <HeadingTextContainer>
-            {new Date(data.published_date).toLocaleDateString('en-US')}
+            {new Date(article.created_at).toLocaleDateString('en-US')}
           </HeadingTextContainer>
         </InformationContainer>
-
-        <Link href="/articles/">
-          <DirectionContainer>
-            <IconContainer>
-              <ArrowCircleLeftIcon />
-            </IconContainer>
-            Volta
-          </DirectionContainer>
-        </Link>
       </TopHeading>
 
-      <PageTitle>{data.title}</PageTitle>
+      <PageTitle>{article.title}</PageTitle>
       <ArticleHolder>
         <ImageContainer>
           <Image
             className="absolute rounded-md"
             src={
-              data?.cover.data
-                ? data.cover.data.attributes.formats.medium.url
+              article.image
+                ? article.image.formats.large.url
                 : '/images/report-default.jpeg'
             }
-            alt="report image"
+            alt="imagem do artigo"
             priority={true}
             height="100"
             width="200"
             layout="responsive"
+            loader={loaderProp}
           />
         </ImageContainer>
-        <Caption>{data.description}</Caption>
+        <Caption>
+          <ReactMarkdown>{article.description}</ReactMarkdown>
+        </Caption>
         <ArticleTextContainer>
           <ArticleText>
             <div className="prose">
-              <ReactMarkdown>{data.content}</ReactMarkdown>
+              <ReactMarkdown>{article.content}</ReactMarkdown>
             </div>
           </ArticleText>
         </ArticleTextContainer>

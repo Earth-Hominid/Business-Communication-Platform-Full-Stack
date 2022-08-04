@@ -46,11 +46,13 @@ const ArticlePage: React.FC<{ articles: Array<string> }> = ({ articles }) => {
         currentPage="/articles"
         currentPageTitle="Artigos"
       >
-        {articles.length === 0 && <h3>No articles to show</h3>}
+        <section className="h-screen">
+          {articles.length === 0 && <h3>No articles to show</h3>}
 
-        {articles.map((article) => (
-          <ArticleItem key={article.id} article={article} />
-        ))}
+          {articles.map((article) => (
+            <ArticleItem key={article.id} article={article} />
+          ))}
+        </section>
       </Layout>
     </>
   );
