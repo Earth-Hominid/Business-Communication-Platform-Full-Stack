@@ -6,14 +6,15 @@ export default function AddReportPage() {
     <>
       <Layout
         title="Rede BS docs | Adicionar um relatório"
-        description="Adicionar um relatório"
-        keywords="aprendendo,administrar, supermercado, eletromóveis, Adicionar um relatório"
+        description="Adicionar um artigo"
+        keywords="aprendendo,administrar, supermercado, eletromóveis, Adicionar um artigo"
         background="bg-blue-50"
-        mainPage="/reports"
-        mainPageTitle="Relatórios"
+        mainPage="/articles"
+        mainPageTitle="Artigos"
         currentPage={`#`}
         currentPageTitle="Adicionar artigo"
-        styles="pb-10 px-4 pt-1  h-screen"
+        styles="h-screen"
+        width="w-full"
       >
         <AddArticleTemplate />
       </Layout>

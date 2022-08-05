@@ -6,6 +6,9 @@ module.exports = {
     './public/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    container: {
+      center: true,
+    },
     extend: {
       fontFamily: {
         paytoneone: ['PaytoneOne', 'sans-serif'],

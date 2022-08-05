@@ -5,9 +5,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import { API_URL } from '@/config/index';
 import {
   FormPageTitle,
+  FormContainer,
   StyledForm,
   InputLabelContainer,
-  FormContainer,
   StyledInput,
   StyledLabel,
   FormButton,

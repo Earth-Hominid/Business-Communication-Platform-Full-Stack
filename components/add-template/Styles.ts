@@ -1,8 +1,7 @@
 import tw from 'tailwind-styled-components';
 
 export const FormPageTitle = tw.h1`
-  px-2 
-  mt-5 
+  pt-5 
   mb-4 
   text-2xl 
   font-montserrat
@@ -12,30 +11,27 @@ export const FormPageTitle = tw.h1`
 `;
 
 export const FormContainer = tw.div`
-  w-full
-  py-6
+  container 
+  px-5
+  max-w-4xl
+`;
+
+export const StyledForm = tw.form`
+  py-2
+  px-5
   flex
+  flex-col
   justify-center
   bg-white
   border 
   border-slate-300 
   shadow-lg
-  rounded-md
-  `;
-
-export const StyledForm = tw.form`
-  flex
-  flex-col
-  justify-center
-  px-5
-  w-full
-  bg-blue-500
+  rounded-lg
 `;
 
 export const InputLabelContainer = tw.div`
   relative 
   mt-4
- 
   flex
   flex-1
 `;
