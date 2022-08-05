@@ -2,28 +2,23 @@ import { createContext, useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { NEXT_URL } from '@/config/index';
 
-interface UserInterface {
-  username: string;
-  email: string;
-  password: string;
-}
-
 const AuthContext = createContext();
 
-// Provider
-export const AuthProvider = ({ children }: { children: any }) => {
+// Provider in your app
+
+export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    checkUserLoggedIn();
-  }, []);
-
   const router = useRouter();
 
+  useEffect(() => {
+    return () => checkUserLoggedIn();
+  }, []);
+
   // Register the user
-  const register = async (user: UserInterface) => {
-    const res = await fetch(`${NEXT_URL}/api/auth/register`, {
+  const register = async (user) => {
+    const res = await fetch(`${NEXT_URL}/api/register`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -41,16 +36,13 @@ export const AuthProvider = ({ children }: { children: any }) => {
       setError(null);
     }
   };
-  // Login the user
-  const login = async ({
-    email: identifier,
-    password,
-  }: {
-    email: string;
-    identifier: string;
-    password: string;
-  }) => {
-    const res = await fetch(`${NEXT_URL}/api/auth/login`, {
+
+  // Login user
+
+  const login = async ({ email: identifier, password }) => {
+    const delayInMilliseconds = 10000;
+
+    const res = await fetch(`${NEXT_URL}/api/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -68,13 +60,17 @@ export const AuthProvider = ({ children }: { children: any }) => {
       router.push('/account/dashboard');
     } else {
       setError(data.message);
-      setError(null);
+      // setTimeout(setError(null), delayInMilliseconds);
     }
+  };
+
+  const clearError = () => {
+    setError(null);
   };
 
   // Logout the user
   const logout = async () => {
-    const res = await fetch(`${NEXT_URL}/api/auth/logout`, {
+    const res = await fetch(`${NEXT_URL}/api/logout`, {
       method: 'POST',
     });
 
@@ -97,7 +93,9 @@ export const AuthProvider = ({ children }: { children: any }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, error, register, login, logout }}>
+    <AuthContext.Provider
+      value={{ user, error, register, login, logout, clearError }}
+    >
       {children}
     </AuthContext.Provider>
   );

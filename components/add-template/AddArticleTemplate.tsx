@@ -42,7 +42,6 @@ const AddArticleTemplate = ({ token }: { token: string }) => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log({ token });
     // validation
     const hasEmptyFields = Object.values(dataForm).some(
       (element) => element === ''

@@ -1,4 +1,5 @@
 import AuthContext from '@/context/AuthContext';
+import React from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useState, useEffect, useContext } from 'react';
@@ -20,10 +21,13 @@ const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const { login, error } = useContext(AuthContext);
+  const { login, error, clearError } = useContext(AuthContext);
 
   useEffect(() => {
-    error && toast.error(error);
+    if (error) {
+      toast.error(error);
+    }
+    clearError();
   });
 
   const handleSubmit = (e: React.SyntheticEvent) => {
