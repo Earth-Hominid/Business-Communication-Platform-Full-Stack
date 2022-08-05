@@ -11,6 +11,7 @@ export default function AboutPage() {
       description="Sobre nós"
       keywords="Sobre nós"
       styles="pb-10 flex justify-center"
+      width="max-w-5xl"
     >
       <div className="flex flex-col m-5 p-5">
         <p className="text-left font-rubik text-lg leading-relaxed text-gray-600">

@@ -15,6 +15,7 @@ interface Props {
   mainPageTitle: string;
   currentPageTitle: string;
   styles: string;
+  width: string;
 }
 
 export const Layout: React.FC<Props> = ({
@@ -28,6 +29,7 @@ export const Layout: React.FC<Props> = ({
   mainPageTitle,
   currentPageTitle,
   styles,
+  width,
 }) => {
   const router = useRouter();
 
@@ -46,7 +48,7 @@ export const Layout: React.FC<Props> = ({
       />
       {router.pathname === '/' && <Showcase />}
       <div className={`${background} ${styles}`}>
-        <div className="max-w-5xl">{children}</div>
+        <div className={`${width}`}>{children}</div>
       </div>
       <Footer />
     </>

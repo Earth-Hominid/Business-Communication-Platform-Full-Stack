@@ -20,6 +20,7 @@ const NotFound = () => {
       currentPage="#"
       currentPageTitle="404. Não encontrado"
       styles="pb-10 flex justify-center"
+      width="max-w-5xl"
     >
       <MainSection>
         <div className="flex flex-row space-x-2 items-center mb-2">

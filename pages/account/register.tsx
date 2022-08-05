@@ -59,6 +59,7 @@ const RegisterPage = () => {
       currentPage="#"
       currentPageTitle="Página de registro"
       styles="p-2 sm:flex sm:justify-center"
+      width="max-w-5xl"
     >
       <StyledContainer>
         <InsideContainer>

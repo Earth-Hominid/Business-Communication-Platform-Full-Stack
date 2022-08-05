@@ -31,6 +31,7 @@ const DashboardPage = ({ articles, token }) => {
       mainPageTitle="Rede BS docs"
       currentPage="#"
       styles="pb-10 p-2 sm:flex sm:justify-center"
+      width="max-w-5xl"
       currentPageTitle={user !== null ? `Painel de ${user.username}` : ''}
     >
       <Welcome user={user} articles={articles} />

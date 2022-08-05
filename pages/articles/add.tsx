@@ -1,5 +1,5 @@
 import { Layout } from '@/components/Layout';
-import AddTemplate from '@/components/add-template/AddArticleTemplate';
+import AddArticleTemplate from '@/components/add-template/AddArticleTemplate';
 
 export default function AddReportPage() {
   return (
@@ -13,9 +13,9 @@ export default function AddReportPage() {
         mainPageTitle="Relatórios"
         currentPage={`#`}
         currentPageTitle="Adicionar artigo"
-        styles="pb-10 flex justify-center h-screen"
+        styles="pb-10 px-4 pt-1  h-screen"
       >
-        <AddTemplate />
+        <AddArticleTemplate />
       </Layout>
     </>
   );

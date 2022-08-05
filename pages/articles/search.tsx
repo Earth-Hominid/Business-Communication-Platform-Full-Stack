@@ -60,6 +60,7 @@ const ArticleSearchPage: React.FC<{ articles: Array<string> }> = ({
         currentPage={'#'}
         currentPageTitle={`Procurar Resultados: ${router.query.term}`}
         styles="pb-10 flex justify-center"
+        width="max-w-5xl"
       >
         <section className="h-screen">
           {articles.map((article) => (

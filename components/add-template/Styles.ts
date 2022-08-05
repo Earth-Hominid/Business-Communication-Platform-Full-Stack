@@ -12,13 +12,6 @@ export const FormPageTitle = tw.h1`
 `;
 
 export const FormContainer = tw.div`
-  flex 
-  w-full 
-  justify-center
-
-`;
-
-export const InsideContainer = tw.div`
   w-full
   py-6
   flex
@@ -30,10 +23,21 @@ export const InsideContainer = tw.div`
   rounded-md
   `;
 
+export const StyledForm = tw.form`
+  flex
+  flex-col
+  justify-center
+  px-5
+  w-full
+  bg-blue-500
+`;
+
 export const InputLabelContainer = tw.div`
   relative 
   mt-4
  
+  flex
+  flex-1
 `;
 
 export const StyledInput = tw.input`

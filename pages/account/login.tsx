@@ -42,6 +42,7 @@ const LoginPage = () => {
       currentPage="#"
       currentPageTitle="Página de login"
       styles="p-2 sm:flex sm:justify-center"
+      width="max-w-5xl"
     >
       <StyledContainer>
         <InsideContainer>
