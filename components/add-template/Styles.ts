@@ -11,14 +11,17 @@ export const FormPageTitle = tw.h1`
 `;
 
 export const FormContainer = tw.div`
-  container 
-  px-5
+  container
   max-w-4xl
+  px-5
+  md:py-2
 `;
 
 export const StyledForm = tw.form`
   py-2
   px-5
+  md:py-5
+  md:px-10
   flex
   flex-col
   justify-center

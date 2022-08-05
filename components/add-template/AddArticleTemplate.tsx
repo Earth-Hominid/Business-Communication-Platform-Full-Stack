@@ -1,8 +1,13 @@
+import { parseCookies } from '@/helpers/index';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { API_URL } from '@/config/index';
+
+import type { NextApiRequest } from 'next';
+
 import {
   FormPageTitle,
   FormContainer,
@@ -14,7 +19,18 @@ import {
   WideTextArea,
 } from './Styles';
 
-const AddArticleTemplate = () => {
+export async function getServerSideProps({ req }) {
+  const { token } = parseCookies(req);
+
+  console.log(token);
+  return {
+    props: {
+      token,
+    },
+  };
+}
+
+const AddArticleTemplate = ({ token }: { token: string }) => {
   const [dataForm, setDataForm] = useState({
     title: '',
     category: '',
@@ -26,7 +42,7 @@ const AddArticleTemplate = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
+    console.log({ token });
     // validation
     const hasEmptyFields = Object.values(dataForm).some(
       (element) => element === ''
@@ -40,15 +56,20 @@ const AddArticleTemplate = () => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify({ data: dataForm }),
+      body: JSON.stringify(dataForm),
     });
 
     if (!res.ok) {
+      if (res.status === 403 || res.status === 401) {
+        toast.error('Token not included', { icon: false });
+        return;
+      }
       toast.error('Could not create article.', { icon: false });
     } else {
-      const report = await res.json();
-      router.push(`/articles/`);
+      const article = await res.json();
+      router.push(`/articles/${article.slug}`);
     }
   };
 

@@ -1,5 +1,5 @@
 import { API_URL } from '@/config/index';
-import cookie from 'cookie';
+import * as cookie from 'cookie';
 
 import type { NextApiRequest, NextApiResponse } from 'next';
 
@@ -35,7 +35,9 @@ const loginUser = async (req: NextApiRequest, res: NextApiResponse) => {
 
       res.status(200).json({ user: data.user });
     } else {
-      res.status(data.error.status).json({ message: data.error.message });
+      res
+        .status(data.statusCode)
+        .json({ message: data.message[0].messages[0].message });
     }
   } else {
     res.setHeader('Allow', ['POST']);
