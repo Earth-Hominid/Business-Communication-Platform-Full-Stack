@@ -35,7 +35,7 @@ const ArticleCard = ({ article, handleDelete }) => {
 
             <ContentParagraph>{article.description}</ContentParagraph>
             <FooterContainer>
-              <Link href={`/articles/edit/${article.slug}`}>
+              <Link href={`/articles/edit/${article.id}`}>
                 <a>
                   <IconButton>
                     <IconContainer>

@@ -1,5 +1,5 @@
 import { API_URL } from '@/config/index';
-import * as cookie from 'cookie';
+import cookie from 'cookie';
 
 import type { NextApiRequest, NextApiResponse } from 'next';
 

@@ -5,8 +5,6 @@ import { parseCookies } from '@/helpers/index';
 import { API_URL } from '@/config/index';
 import { useRouter } from 'next/router';
 import Welcome from '@/components/dashboard/welcome-page/Welcome';
-import qs from 'qs';
-import ReportTemplate from '@/components/dashboard/article-card/ArticleCard';
 
 const DashboardPage = ({ articles, token }) => {
   const [initialPage, setInitialPage] = useState(true);
