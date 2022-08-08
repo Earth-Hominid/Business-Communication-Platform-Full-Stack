@@ -1,7 +1,69 @@
 import { Layout } from '@/components/Layout';
+import { parseCookies } from '@/helpers/index';
 import AddArticleTemplate from '@/components/add-template/AddArticleTemplate';
+import { useState } from 'react';
+import { useRouter } from 'next/router';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { API_URL } from '@/config/index';
 
-export default function AddReportPage() {
+export async function getServerSideProps({ req }) {
+  const { token } = parseCookies(req);
+
+  return {
+    props: {
+      token,
+    },
+  };
+}
+
+export default function AddReportPage({ token }) {
+  const [dataForm, setDataForm] = useState({
+    title: '',
+    category: '',
+    description: '',
+    content: '',
+  });
+
+  const router = useRouter();
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // validation
+    const hasEmptyFields = Object.values(dataForm).some(
+      (element) => element === ''
+    );
+
+    if (hasEmptyFields) {
+      toast.error('Please fill in all empty fields.', { icon: false });
+    }
+
+    const res = await fetch(`${API_URL}/articles`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(dataForm),
+    });
+
+    if (!res.ok) {
+      if (res.status === 403 || res.status === 401) {
+        toast.error('Token not included', { icon: false });
+        return;
+      }
+      toast.error('Could not create article.', { icon: false });
+    } else {
+      const article = await res.json();
+      router.push(`/articles/${article.slug}`);
+    }
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setDataForm({ ...dataForm, [name]: value });
+  };
+
   return (
     <>
       <Layout
@@ -16,7 +78,12 @@ export default function AddReportPage() {
         styles="h-screen"
         width="w-full"
       >
-        <AddArticleTemplate />
+        <AddArticleTemplate
+          token={token}
+          handleSubmit={handleSubmit}
+          handleInputChange={handleInputChange}
+          dataForm={dataForm}
+        />
       </Layout>
     </>
   );

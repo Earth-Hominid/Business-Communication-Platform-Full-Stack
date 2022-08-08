@@ -8,16 +8,11 @@ import { PhotographIcon } from '@heroicons/react/outline';
 import ImageUpload from '@/components/image/ImageUpload';
 import Modal from '@/components/modal/Modal';
 
-type report = {
-  id: string;
-  attributes: object;
-};
-
-type attributes = {
+type aricle = {
   title: string;
   description: string;
   category: string;
-  store: string;
+  content: string;
   slug: string;
   image: object;
 };
@@ -27,7 +22,6 @@ import {
   FormContainer,
   StyledForm,
   InputLabelContainer,
-  InsideContainer,
   StyledInput,
   StyledLabel,
   FormButton,

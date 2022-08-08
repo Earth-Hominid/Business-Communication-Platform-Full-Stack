@@ -24,7 +24,7 @@ export async function getServerSideProps({ params: { id }, req }) {
     },
   };
 }
-const EditArticlePage = ({ article }) => {
+const EditArticlePage = ({ article, token }) => {
   return (
     <>
       <Layout
@@ -39,7 +39,7 @@ const EditArticlePage = ({ article }) => {
         styles=""
         width=""
       >
-        <EditArticleTemplate article={article} />
+        <EditArticleTemplate article={article} token={token} />
       </Layout>
     </>
   );
