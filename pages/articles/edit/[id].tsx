@@ -31,7 +31,7 @@ const EditArticlePage = ({ article }) => {
         title="Rede BS docs | Adicionar um relatório"
         description="Editar um relatório"
         keywords="aprendendo,administrar, supermercado, eletromóveis, Editar um relatório"
-        background="bg-white"
+        background="bg-blue-50"
         mainPage="/reports"
         mainPageTitle="Relatórios"
         currentPage="#"

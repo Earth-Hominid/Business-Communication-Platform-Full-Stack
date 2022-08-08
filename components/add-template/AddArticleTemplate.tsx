@@ -1,7 +1,6 @@
 import { parseCookies } from '@/helpers/index';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import Link from 'next/link';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { API_URL } from '@/config/index';
@@ -79,6 +78,7 @@ const AddArticleTemplate = ({ token }: { token: string }) => {
 
   return (
     <>
+      <FormPageTitle>Insira os detalhes do artigo abaixo.</FormPageTitle>
       <ToastContainer
         position="top-right"
         autoClose={5000}
@@ -90,7 +90,6 @@ const AddArticleTemplate = ({ token }: { token: string }) => {
         draggable
         pauseOnHover
       />
-      <FormPageTitle>Insira os detalhes do artigo abaixo.</FormPageTitle>
       <FormContainer>
         <StyledForm onSubmit={handleSubmit}>
           <InputLabelContainer>
