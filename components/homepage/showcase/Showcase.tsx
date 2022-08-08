@@ -10,7 +10,7 @@ const Showcase = () => {
     <>
       <MainSection>
         <TextContainer>
-          <HeadingText>Plataforma de aprendizagem Rede BS.</HeadingText>
+          <HeadingText>Plataforma de aprendizagem Rede BS docs.</HeadingText>
           <SubheadingText>Recursos para funcionários.</SubheadingText>
         </TextContainer>
       </MainSection>

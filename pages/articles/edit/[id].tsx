@@ -1,7 +1,7 @@
 import { Layout } from '@/components/Layout';
 import { parseCookies } from '@/helpers/index';
 import { API_URL } from 'config';
-import EditArticleTemplate from '@/components/edit-template/EditArticleTemplate';
+import EditArticleTemplate from '@/components/articles/edit-article/EditArticleTemplate';
 
 type res = {
   id: string;

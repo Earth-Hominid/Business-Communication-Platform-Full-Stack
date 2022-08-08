@@ -1,6 +1,6 @@
 import { Layout } from '@/components/Layout';
 import { parseCookies } from '@/helpers/index';
-import AddArticleTemplate from '@/components/add-template/AddArticleTemplate';
+import AddArticleTemplate from '@/components/articles/add-article/AddArticleTemplate';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { ToastContainer, toast } from 'react-toastify';

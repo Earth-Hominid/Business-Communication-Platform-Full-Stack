@@ -5,7 +5,7 @@ export const MainSection = tw.section`
  flex
  flex-col
  relative
- bg-[#1A1A1A]
+ bg-[#FEF336]
  min-h-[250px]
  md:min-h-[300px]
  border-b-2	
@@ -27,14 +27,14 @@ export const HeadingText = tw.h1`
   text-3xl
   md:text-4xl
   lg:text-4xl
-  font-bold
+  font-extrabold
   leading-normal
-  text-gray-300
+  text-black
    text-left
 `;
 
 export const SubheadingText = tw.h2`
-  text-gray-50
+  text-gray-600
   text-xl
   md:text-2xl
   md:mt-10
