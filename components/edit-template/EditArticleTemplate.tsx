@@ -92,13 +92,11 @@ const EditArticleTemplate = ({ article, token }) => {
     setDataForm({ ...dataForm, [name]: value });
   };
 
-  const imageUploaded = async () => {
+  const imageUploaded = async (e) => {
     const res = await fetch(`${API_URL}/articles/${article.id}`);
     const data = await res.json();
     setImagePreview(data.image.formats.thumbnail.url);
     setShowModal(false);
-
-    // router.push(`/articles/`);
   };
 
   return (
@@ -208,6 +206,7 @@ const EditArticleTemplate = ({ article, token }) => {
             articleId={article.id}
             imageUploaded={imageUploaded}
             imageId={imageId}
+            token={token}
           />
         </Modal>
       </FormContainer>

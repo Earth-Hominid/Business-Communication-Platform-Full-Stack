@@ -1,11 +1,9 @@
 import { useState } from 'react';
-import { Router, useRouter } from 'next/router';
 import { API_URL } from '@/config/index';
 import { FileInput, FormContainer, SubmitInput } from './Styles';
 
-const ImageUpload = ({ reportId, imageUploaded, imageId }) => {
+const ImageUpload = ({ articleId, imageUploaded, imageId, token }) => {
   const [image, setImage] = useState(null);
-  const router = useRouter();
 
   const handleFileChange = (e) => {
     setImage(e.target.files[0]);
@@ -13,45 +11,22 @@ const ImageUpload = ({ reportId, imageUploaded, imageId }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const data = {};
     const formData = new FormData();
     formData.append(`files`, image);
-    formData.append('ref', 'api::report.report');
-    formData.append('refId', reportId);
+    formData.append('ref', 'articles');
+    formData.append('refId', articleId);
     formData.append('field', 'image');
-    formData.append('data', JSON.stringify(data));
 
-    // console.log(formData);
+    const res = await fetch(`${API_URL}/upload`, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      body: formData,
+    });
 
-    const uploadFormData = async () => {
-      const res = await fetch(`${API_URL}/api/upload`, {
-        method: 'POST',
-        body: formData,
-      });
-
-      if (res.ok) {
-        console.log('res.ok');
-        console.log('res', res);
-        imageUploaded();
-      }
-    };
-
-    if (imageId === null) {
-      console.log('imgId is null');
-      uploadFormData();
-    } else {
-      console.log('imgId not null');
-
-      const resDelete = await fetch(`${API_URL}/api/upload/files/${imageId}`, {
-        method: 'DELETE',
-        // body: formData,
-      });
-
-      if (resDelete.ok) {
-        console.log('resDelete.ok');
-        console.log('resDelete', resDelete);
-        uploadFormData();
-      }
+    if (res.ok) {
+      imageUploaded();
     }
   };
 
