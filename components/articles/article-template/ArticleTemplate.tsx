@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 
 import {
@@ -8,13 +7,11 @@ import {
   PageTitle,
   Caption,
   StoreLogo,
-  DirectionContainer,
   HeadingTextContainer,
   ImageContainer,
   ArticleTextContainer,
   ArticleText,
   ArticleHolder,
-  IconContainer,
   InformationContainer,
 } from './Styles';
 

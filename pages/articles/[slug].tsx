@@ -1,8 +1,10 @@
 import { Layout } from '@/components/Layout';
 import { API_URL } from 'config';
 import ArticleTemplate from '@/components/articles/article-template/ArticleTemplate';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-type res = {
+type article = {
   id: string;
   title: string;
   category: string;
@@ -43,6 +45,7 @@ const ArticlePage: React.FC<{ article: Array<string> }> = ({ article }) => {
       width="max-w-5xl"
     >
       <section className="h-screen">
+        <ToastContainer />
         <ArticleTemplate article={article} />
       </section>
     </Layout>

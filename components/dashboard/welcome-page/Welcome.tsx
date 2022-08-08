@@ -1,9 +1,8 @@
 import { HeaderContainer, MainSection, Title } from './Styles';
 import ArticleCard from '../article-card/ArticleCard';
+import { API_URL } from '@/config/index';
 
-const Welcome = ({ user, articles }) => {
-  const deleteReport = (id: string) => console.log(id);
-
+const Welcome = ({ articles, user, deleteArticle }) => {
   return (
     <MainSection>
       <HeaderContainer>
@@ -14,7 +13,7 @@ const Welcome = ({ user, articles }) => {
         <ArticleCard
           key={article.id}
           article={article}
-          handleDelete={deleteReport}
+          handleDelete={deleteArticle}
         />
       ))}
     </MainSection>
