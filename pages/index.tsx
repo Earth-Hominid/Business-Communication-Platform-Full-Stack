@@ -36,11 +36,11 @@ const HomePage: NextPage = ({ articles }) => {
             <ArticleItem key={article.id} article={article} />
           ))}
 
-          {articles.length > 0 && (
+          {/* {articles.length > 0 && (
             <Link href="/articles">
               <a>View All Articles</a>
             </Link>
-          )}
+          )} */}
         </Layout>
       </div>
     </>

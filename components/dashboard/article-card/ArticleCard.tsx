@@ -53,7 +53,7 @@ const ArticleCard = ({ article, handleDelete }) => {
               </RedIconButton>
 
               <FooterText>{`Publicados: ${new Date(
-                article.createdAt
+                article.created_at
               ).toDateString()}`}</FooterText>
             </FooterContainer>
           </CardContainer>
