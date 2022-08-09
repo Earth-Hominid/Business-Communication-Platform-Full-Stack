@@ -17,7 +17,7 @@ export async function getServerSideProps({ req }) {
   };
 }
 
-export default function AddReportPage({ token }) {
+export default function AddArticlePage({ token }) {
   const [dataForm, setDataForm] = useState({
     title: '',
     category: '',
@@ -67,7 +67,7 @@ export default function AddReportPage({ token }) {
   return (
     <>
       <Layout
-        title="Rede BS docs | Adicionar um relatório"
+        title="Rede BS docs | Adicionar um artigo"
         description="Adicionar um artigo"
         keywords="aprendendo,administrar, supermercado, eletromóveis, Adicionar um artigo"
         background="bg-blue-50"
