@@ -8,6 +8,7 @@ import {
   SunIcon,
   MoonIcon,
   DocumentAddIcon,
+  DocumentReportIcon,
   DesktopComputerIcon,
   LogoutIcon,
 } from '@heroicons/react/outline';
@@ -21,8 +22,9 @@ import {
   LogoutButtonLink,
   ButtonLink,
   SignUpButtonLink,
-  CreateSubforumButton,
-  CreatePostButton,
+  AddReportButton,
+  AddArticleButton,
+  DashboardButton,
 } from './Styles';
 
 const BottomNavigation = () => {
@@ -76,12 +78,12 @@ const BottomNavigation = () => {
         <SearchBar />
       </ActionButtonHolder>
       <ActionButtonHolder>
-        <ThemeButton>
+        {/* <ThemeButton>
           <IconWrap>
             <SunIcon />
           </IconWrap>
           Theme
-        </ThemeButton>
+        </ThemeButton> */}
         {/* {session ? (
           <>
             <ButtonLink>Demo Account</ButtonLink>
@@ -89,22 +91,30 @@ const BottomNavigation = () => {
         )} */}
         {user ? (
           <>
-            <Link href="/reports/add">
-              <CreateSubforumButton>
+            <Link href="/articles/add">
+              <AddReportButton>
+                <IconWrap>
+                  <DocumentReportIcon />
+                </IconWrap>
+                Relatório
+              </AddReportButton>
+            </Link>
+            <Link href="/articles/add">
+              <AddArticleButton>
                 <IconWrap>
                   <DocumentAddIcon />
                 </IconWrap>
-                Relatório
-              </CreateSubforumButton>
+                Artigo
+              </AddArticleButton>
             </Link>
 
             <Link href="/account/dashboard">
-              <CreatePostButton>
+              <DashboardButton>
                 <IconWrap>
                   <DesktopComputerIcon />
                 </IconWrap>
                 Conta
-              </CreatePostButton>
+              </DashboardButton>
             </Link>
 
             <LogoutButtonLink onClick={() => logout()}>

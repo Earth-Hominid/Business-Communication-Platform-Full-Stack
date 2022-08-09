@@ -4,10 +4,9 @@ import AuthContext from '@/context/AuthContext';
 import {
   XIcon,
   MenuIcon,
-  LibraryIcon,
   DocumentAddIcon,
+  DocumentReportIcon,
   DesktopComputerIcon,
-  FireIcon,
 } from '@heroicons/react/outline';
 import { useRouter } from 'next/router';
 
@@ -20,6 +19,7 @@ import {
   LoginButtonLink,
   BlueIconWrap,
   IndigoIconWrap,
+  SlateIconWrap,
 } from './Styles';
 
 const NavigationButtons = ({
@@ -47,8 +47,13 @@ const NavigationButtons = ({
         <ButtonContainer>
           {user ? (
             <>
+              <SlateIconWrap>
+                <Link href="/reports/add">
+                  <DocumentReportIcon />
+                </Link>
+              </SlateIconWrap>
               <BlueIconWrap>
-                <Link href="/reports/addreport">
+                <Link href="/articles/add">
                   <DocumentAddIcon />
                 </Link>
               </BlueIconWrap>

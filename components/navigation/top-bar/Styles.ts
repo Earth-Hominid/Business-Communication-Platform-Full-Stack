@@ -142,7 +142,7 @@ export const CyanIconWrap = tw.div`
   md:hover:bg-cyan-100
   md:hover:text-cyan-700
   rounded-3xl 
-  text-stone-600
+  text-slate-500
   duration-150
   transition
   ease-in-out
@@ -163,16 +163,16 @@ export const BlueIconWrap = tw.div`
   ease-in-out
 `;
 
-export const SkyIconWrap = tw.div`
+export const SlateIconWrap = tw.div`
   h-9 
   w-6 
   md:w-9 
   cursor-pointer 
   md:p-1 
-  md:hover:bg-sky-100
-  md:hover:text-sky-600
+  md:hover:bg-slate-100
+  md:hover:text-slate-600
   rounded-3xl 
-  text-stone-600
+  text-slate-500
   duration-150
   transition
   ease-in-out

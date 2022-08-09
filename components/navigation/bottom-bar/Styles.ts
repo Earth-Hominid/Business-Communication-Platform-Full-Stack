@@ -147,7 +147,7 @@ export const SkyIconWrap = tw.div`
   ease-in-out
 `;
 
-export const CreateSubforumButton = tw.button`
+export const AddArticleButton = tw.button`
 flex
 flex-row
 items-center
@@ -167,7 +167,27 @@ items-center
   ease-in-out
 `;
 
-export const CreatePostButton = tw.button`
+export const AddReportButton = tw.button`
+flex
+flex-row
+items-center
+  border-2
+  text-white
+  bg-slate-500
+  border-slate-500
+  px-3
+  py-1
+  rounded-3xl
+  cursor-pointer
+  hover:text-slate-500
+  hover:bg-blue-50
+  hover:border-2
+  transition
+  duration-300
+  ease-in-out
+`;
+
+export const DashboardButton = tw.button`
 flex
 flex-row
 items-center
