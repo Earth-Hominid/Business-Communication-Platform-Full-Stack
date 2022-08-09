@@ -7,29 +7,42 @@ import { useRouter } from 'next/router';
 import Welcome from '@/components/dashboard/welcome-page/Welcome';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ReportSection from '@/components/reports/dashboard/ReportSection';
 
 export const getServerSideProps = async ({ req }: { req: any }) => {
   const { token } = parseCookies(req);
 
-  // Fetch all reports
-  const res = await fetch(`${API_URL}/articles/me`, {
+  // Fetch all articles
+  const articleResponse = await fetch(`${API_URL}/articles/me`, {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${token}`,
     },
   });
 
-  const articles = await res.json();
+  const articles = await articleResponse.json();
+
+  // Fetch all reports
+
+  const reportResponse = await fetch(`${API_URL}/reports/me`, {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
+  const reports = await reportResponse.json();
 
   return {
     props: {
       articles,
+      reports,
       token,
     },
   };
 };
 
-const DashboardPage = ({ articles, token }) => {
+const DashboardPage = ({ articles, reports, token }) => {
   const [initialPage, setInitialPage] = useState(true);
   const [modal, setModal] = useState(false);
 
@@ -62,6 +75,25 @@ const DashboardPage = ({ articles, token }) => {
     }
   };
 
+  const deleteReport = async (id: string) => {
+    if (confirm('Are you sure you want to delete?')) {
+      const res = await fetch(`${API_URL}/reports/${id}`, {
+        method: 'DELETE',
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        toast.error(data.message);
+      } else {
+        router.push('/account/dashboard');
+      }
+    }
+  };
+
   return (
     <Layout
       title="Painel do usuário"
@@ -75,7 +107,13 @@ const DashboardPage = ({ articles, token }) => {
       width="max-w-5xl"
       currentPageTitle={user !== null ? `Painel de ${user.username}` : ''}
     >
-      <Welcome user={user} articles={articles} deleteArticle={deleteArticle} />
+      <Welcome
+        user={user}
+        articles={articles}
+        deleteArticle={deleteArticle}
+        deleteReport={deleteReport}
+        reports={reports}
+      />
     </Layout>
   );
 };

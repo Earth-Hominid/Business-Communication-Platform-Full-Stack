@@ -1,8 +1,8 @@
 import { HeaderContainer, MainSection, Title } from './Styles';
 import ArticleCard from '../article-card/ArticleCard';
-import { API_URL } from '@/config/index';
+import ReportCard from '../../dashboard/report-card/ReportCard';
 
-const Welcome = ({ articles, user, deleteArticle }) => {
+const Welcome = ({ articles, user, reports, deleteArticle, deleteReport }) => {
   return (
     <MainSection>
       <HeaderContainer>
@@ -14,6 +14,14 @@ const Welcome = ({ articles, user, deleteArticle }) => {
           key={article.id}
           article={article}
           handleDelete={deleteArticle}
+        />
+      ))}
+
+      {reports.map((report) => (
+        <ReportCard
+          key={report.id}
+          report={report}
+          handleDelete={deleteReport}
         />
       ))}
     </MainSection>
