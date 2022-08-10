@@ -91,7 +91,7 @@ const BottomNavigation = () => {
         )} */}
         {user ? (
           <>
-            <Link href="/articles/add">
+            <Link href="/reports/add">
               <AddReportButton>
                 <IconWrap>
                   <DocumentReportIcon />
