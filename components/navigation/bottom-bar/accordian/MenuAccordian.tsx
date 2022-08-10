@@ -1,17 +1,12 @@
 import { useState } from 'react';
 import AccordianContent from './AccordianContent';
-import {
-  ChevronDownIcon,
-  ChevronRightIcon,
-  AcademicCapIcon,
-} from '@heroicons/react/solid';
+import { ChevronDownIcon, ChevronRightIcon } from '@heroicons/react/solid';
 import {
   AccordianContainer,
   AccordianSummary,
   SummaryTitle,
   AccordianText,
   IconHolder,
-  LargeIconWrap,
 } from './Styles';
 
 const MenuAccordian = ({ props }) => {

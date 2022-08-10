@@ -8,7 +8,7 @@ import { PhotographIcon } from '@heroicons/react/outline';
 import ImageUpload from '@/components/image/ImageUpload';
 import Modal from '@/components/modal/Modal';
 
-type article = {
+type report = {
   title: string;
   description: string;
   category: string;
@@ -34,20 +34,20 @@ import {
   ButtonHolder,
 } from './Styles';
 
-const EditArticleTemplate = ({ article, token }) => {
+const EditReportTemplate = ({ report, token }) => {
   const [dataForm, setDataForm] = useState({
-    title: article.title,
-    category: article.category,
-    description: article.description,
-    content: article.content,
+    title: report.title,
+    category: report.category,
+    description: report.description,
+    content: report.content,
   });
 
   const [imageId, setImageId] = useState(
-    article.image ? article.image.formats.thumbnail.url : null
+    report.image ? report.image.formats.thumbnail.url : null
   );
 
   const [imagePreview, setImagePreview] = useState(
-    article.image ? article.image.formats.thumbnail.url : null
+    report.image ? report.image.formats.thumbnail.url : null
   );
 
   const [showModal, setShowModal] = useState(false);
@@ -66,7 +66,7 @@ const EditArticleTemplate = ({ article, token }) => {
       toast.error('Please fill in all empty fields.', { icon: false });
     }
 
-    const res = await fetch(`${API_URL}/articles/${article.id}`, {
+    const res = await fetch(`${API_URL}/articles/${report.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -80,10 +80,10 @@ const EditArticleTemplate = ({ article, token }) => {
         toast.error('Unauthorized');
         return;
       }
-      toast.error('Could not create article.', { icon: false });
+      toast.error('Could not create report.', { icon: false });
     } else {
-      const article = await res.json();
-      router.push(`/articles/${article.slug}`);
+      const report = await res.json();
+      router.push(`/reports/${report.slug}`);
     }
   };
 
@@ -93,7 +93,7 @@ const EditArticleTemplate = ({ article, token }) => {
   };
 
   const imageUploaded = async (e) => {
-    const res = await fetch(`${API_URL}/articles/${article.id}`);
+    const res = await fetch(`${API_URL}/articles/${report.id}`);
     const data = await res.json();
     setImagePreview(data.image.formats.thumbnail.url);
     setShowModal(false);
@@ -203,7 +203,7 @@ const EditArticleTemplate = ({ article, token }) => {
           onClose={() => setShowModal(false)}
         >
           <ImageUpload
-            articleId={article.id}
+            articleId={report.id}
             imageUploaded={imageUploaded}
             imageId={imageId}
             token={token}
@@ -214,4 +214,4 @@ const EditArticleTemplate = ({ article, token }) => {
   );
 };
 
-export default EditArticleTemplate;
+export default EditReportTemplate;

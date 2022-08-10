@@ -47,16 +47,16 @@ const NavigationButtons = ({
         <ButtonContainer>
           {user ? (
             <>
-              <SlateIconWrap>
-                <Link href="/reports/add">
-                  <DocumentReportIcon />
-                </Link>
-              </SlateIconWrap>
               <BlueIconWrap>
                 <Link href="/articles/add">
                   <DocumentAddIcon />
                 </Link>
               </BlueIconWrap>
+              <SlateIconWrap>
+                <Link href="/reports/add">
+                  <DocumentReportIcon />
+                </Link>
+              </SlateIconWrap>
               <IndigoIconWrap>
                 <Link href="/account/dashboard">
                   <DesktopComputerIcon />

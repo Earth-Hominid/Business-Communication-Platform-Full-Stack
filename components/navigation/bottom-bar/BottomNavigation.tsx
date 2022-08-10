@@ -91,14 +91,6 @@ const BottomNavigation = () => {
         )} */}
         {user ? (
           <>
-            <Link href="/reports/add">
-              <AddReportButton>
-                <IconWrap>
-                  <DocumentReportIcon />
-                </IconWrap>
-                Relatório
-              </AddReportButton>
-            </Link>
             <Link href="/articles/add">
               <AddArticleButton>
                 <IconWrap>
@@ -106,6 +98,14 @@ const BottomNavigation = () => {
                 </IconWrap>
                 Artigo
               </AddArticleButton>
+            </Link>
+            <Link href="/reports/add">
+              <AddReportButton>
+                <IconWrap>
+                  <DocumentReportIcon />
+                </IconWrap>
+                Relatório
+              </AddReportButton>
             </Link>
 
             <Link href="/account/dashboard">

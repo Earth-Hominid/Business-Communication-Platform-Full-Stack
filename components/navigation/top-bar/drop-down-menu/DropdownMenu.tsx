@@ -31,7 +31,7 @@ const DropdownMenu = () => {
           <Link href="/reports/add">
             <ButtonHolder>
               <IconHolder>
-                <DocumentAddIcon />
+                <ChartSquareBarIcon />
               </IconHolder>
 
               <p className="ml-1">Adicionar um relatório</p>
