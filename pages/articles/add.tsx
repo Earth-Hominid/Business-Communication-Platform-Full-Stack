@@ -3,11 +3,12 @@ import { parseCookies } from '@/helpers/index';
 import AddArticleTemplate from '@/components/articles/add-article/AddArticleTemplate';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { API_URL } from '@/config/index';
+import { NextApiRequest } from 'next';
 
-export async function getServerSideProps({ req }) {
+export async function getServerSideProps({ req }: { req: NextApiRequest }) {
   const { token } = parseCookies(req);
 
   return {
@@ -17,7 +18,7 @@ export async function getServerSideProps({ req }) {
   };
 }
 
-export default function AddArticlePage({ token }) {
+export default function AddArticlePage({ token }: { token: string }) {
   const [dataForm, setDataForm] = useState({
     title: '',
     category: '',

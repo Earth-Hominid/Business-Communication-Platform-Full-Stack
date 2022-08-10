@@ -3,11 +3,13 @@ import { parseCookies } from '@/helpers/index';
 import AddReportTemplate from '@/components/reports/add-report/AddReportTemplate';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { API_URL } from '@/config/index';
 
-export async function getServerSideProps({ req }) {
+import { NextApiRequest } from 'next';
+
+export async function getServerSideProps({ req }: { req: NextApiRequest }) {
   const { token } = parseCookies(req);
 
   return {
@@ -17,7 +19,7 @@ export async function getServerSideProps({ req }) {
   };
 }
 
-export default function AddReportPage({ token }) {
+export default function AddReportPage({ token }: { token: string }) {
   const [dataForm, setDataForm] = useState({
     title: '',
     content: '',
@@ -52,9 +54,9 @@ export default function AddReportPage({ token }) {
         toast.error('Token not included', { icon: false });
         return;
       }
-      toast.error('Could not create article.', { icon: false });
+      toast.error('Could not create report.', { icon: false });
     } else {
-      const article = await res.json();
+      const report = await res.json();
       router.push(`/reports/${report.slug}`);
     }
   };
