@@ -65,7 +65,7 @@ const ReportPage: React.FC<{ report: ReportInterface }> = ({ report }) => {
       styles="pb-10 lg:flex lg:justify-center"
       width="max-w-5xl"
     >
-      <section className="h-screen">
+      <section className="">
         <ToastContainer />
         <ReportTemplate reportData={report} />
       </section>

@@ -48,7 +48,7 @@ const ArticlePage: React.FC<{ articles: Array<string> }> = ({ articles }) => {
         styles="pb-10 flex justify-center"
         width="max-w-5xl"
       >
-        <section className="h-screen">
+        <section className="">
           {articles.length === 0 && <h3>No articles to show</h3>}
 
           {articles.map((article) => (

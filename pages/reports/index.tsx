@@ -57,7 +57,7 @@ const ReportPage: React.FC<{ reports: Array<string> }> = ({ reports }) => {
         styles="pb-10 flex justify-center"
         width="max-w-5xl"
       >
-        <section className="h-screen">
+        <section className="">
           {reports.length === 0 && <h3>No reports to show</h3>}
 
           {reports.map((report) => (

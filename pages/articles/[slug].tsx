@@ -4,7 +4,7 @@ import ArticleTemplate from '@/components/articles/article-template/ArticleTempl
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-type article = {
+interface ArticleInterface {
   id: string;
   title: string;
   category: string;
@@ -12,7 +12,12 @@ type article = {
   content: string;
   date: string;
   description: string;
-};
+  slug: string;
+  owner: string;
+  published_at: string;
+  created_at: string;
+  updated_at: string;
+}
 
 export const getServerSideProps = async ({ query: { slug } }) => {
   // fetch articles
@@ -28,7 +33,7 @@ export const getServerSideProps = async ({ query: { slug } }) => {
   };
 };
 
-const ArticlePage: React.FC<{ article: Array<string> }> = ({ article }) => {
+const ArticlePage: React.FC<{ article: ArticleInterface }> = ({ article }) => {
   if (!article) return <div>Loading...</div>;
 
   return (
@@ -44,9 +49,9 @@ const ArticlePage: React.FC<{ article: Array<string> }> = ({ article }) => {
       styles="pb-10 lg:flex lg:justify-center"
       width="max-w-5xl"
     >
-      <section className="h-screen">
+      <section className="">
         <ToastContainer />
-        <ArticleTemplate article={article} />
+        <ArticleTemplate articleData={article} />
       </section>
     </Layout>
   );

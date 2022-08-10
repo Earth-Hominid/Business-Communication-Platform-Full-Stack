@@ -29,10 +29,12 @@ type article = {
   image: string;
 };
 
-const ArticleTemplate: React.FC<{ article: article }> = ({ article }) => {
+const ArticleTemplate: React.FC<{ article: article }> = ({ articleData }) => {
   const loaderProp = ({ src }) => {
     return src;
   };
+
+  let article = articleData;
 
   return (
     <MainSection>
