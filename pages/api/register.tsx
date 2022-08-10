@@ -1,4 +1,4 @@
-import * as cookie from 'cookie';
+import cookie from 'cookie';
 import { API_URL } from '@/config/index';
 
 import type { NextApiRequest, NextApiResponse } from 'next';
@@ -45,3 +45,5 @@ const strapiRegister = async (req: NextApiRequest, res: NextApiResponse) => {
     res.status(405).json({ message: `Method ${req.method} not allowed` });
   }
 };
+
+export default strapiRegister;
