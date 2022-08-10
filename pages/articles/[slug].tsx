@@ -1,7 +1,7 @@
 import { Layout } from '@/components/Layout';
 import { API_URL } from 'config';
 import ArticleTemplate from '@/components/articles/article-template/ArticleTemplate';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 type article = {

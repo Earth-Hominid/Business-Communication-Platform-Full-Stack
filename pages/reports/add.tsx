@@ -6,7 +6,6 @@ import { useRouter } from 'next/router';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { API_URL } from '@/config/index';
-
 import { NextApiRequest } from 'next';
 
 export async function getServerSideProps({ req }: { req: NextApiRequest }) {

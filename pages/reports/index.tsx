@@ -2,8 +2,9 @@ import { Layout } from '@/components/Layout';
 import { API_URL } from '@/config/index';
 import { parseCookies } from '@/helpers/index';
 import ReportItem from '@/components/reports/report-item/ReportItem';
+import { NextApiRequest } from 'next';
 
-type reports = {
+interface ReportInterface {
   id: string;
   title: string;
   content: string;
@@ -15,9 +16,9 @@ type reports = {
   created_at: string;
   updated_at: string;
   image: string;
-};
+}
 
-export const getServerSideProps = async ({ req }: { req: any }) => {
+export const getServerSideProps = async ({ req }: { req: NextApiRequest }) => {
   const { token } = parseCookies(req);
 
   // Fetch all articles

@@ -7,6 +7,9 @@ export const FooterContainer = tw.footer`
   h-12
   justify-center
   items-center
+  fixed
+  inset-x-0
+  bottom-0
 `;
 
 export const FooterText = tw.p`

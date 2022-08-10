@@ -12,12 +12,7 @@ import {
   WideTextArea,
 } from './Styles';
 
-const AddArticleTemplate = ({
-  token,
-  handleInputChange,
-  handleSubmit,
-  dataForm,
-}) => {
+const AddArticleTemplate = ({ handleInputChange, handleSubmit, dataForm }) => {
   return (
     <>
       <FormPageTitle>Insira os detalhes do artigo abaixo.</FormPageTitle>

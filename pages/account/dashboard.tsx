@@ -7,7 +7,6 @@ import { useRouter } from 'next/router';
 import Welcome from '@/components/dashboard/welcome-page/Welcome';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import ReportSection from '@/components/reports/dashboard/ReportSection';
 
 export const getServerSideProps = async ({ req }: { req: any }) => {
   const { token } = parseCookies(req);
@@ -42,7 +41,7 @@ export const getServerSideProps = async ({ req }: { req: any }) => {
   };
 };
 
-const DashboardPage = ({ articles, reports, token }) => {
+const DashboardPage = ({ articles, reports, token }: { token: string }) => {
   const [initialPage, setInitialPage] = useState(true);
   const [modal, setModal] = useState(false);
 

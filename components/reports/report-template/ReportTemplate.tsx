@@ -9,13 +9,13 @@ import {
   StoreLogo,
   HeadingTextContainer,
   ImageContainer,
-  ArticleTextContainer,
-  ArticleText,
-  ArticleHolder,
+  ReportTextContainer,
+  ReportText,
+  ReportHolder,
   InformationContainer,
 } from './Styles';
 
-type article = {
+type report = {
   id: string;
   title: string;
   content: string;
@@ -26,33 +26,34 @@ type article = {
   published_at: string;
   created_at: string;
   updated_at: string;
-  image: string;
 };
 
-const ArticleTemplate: React.FC<{ article: article }> = ({ article }) => {
+const ReportTemplate: React.FC<{ reportData: report }> = ({ reportData }) => {
   const loaderProp = ({ src }) => {
     return src;
   };
+
+  let report = reportData;
 
   return (
     <MainSection>
       <TopHeading>
         <InformationContainer>
-          <StoreLogo>{article.category}</StoreLogo>
+          <StoreLogo>{report.category}</StoreLogo>
           <HeadingTextContainer>
-            {new Date(article.created_at).toLocaleDateString('en-US')}
+            {new Date(report.created_at).toLocaleDateString('en-US')}
           </HeadingTextContainer>
         </InformationContainer>
       </TopHeading>
 
-      <PageTitle>{article.title}</PageTitle>
-      <ArticleHolder>
+      <PageTitle>{report.title}</PageTitle>
+      <ReportHolder>
         <ImageContainer>
           <Image
             className="absolute rounded-md"
             src={
-              article.image
-                ? article.image.formats.large.url
+              report.image
+                ? report.image.formats.large.url
                 : '/images/report-default.jpeg'
             }
             alt="imagem do artigo"
@@ -64,16 +65,16 @@ const ArticleTemplate: React.FC<{ article: article }> = ({ article }) => {
           />
         </ImageContainer>
         <Caption>
-          <ReactMarkdown>{article.description}</ReactMarkdown>
+          <ReactMarkdown>{report.description}</ReactMarkdown>
         </Caption>
-        <ArticleTextContainer>
-          <ArticleText>
-            <ReactMarkdown>{article.content}</ReactMarkdown>
-          </ArticleText>
-        </ArticleTextContainer>
-      </ArticleHolder>
+        <ReportTextContainer>
+          <ReportText>
+            <ReactMarkdown>{report.content}</ReactMarkdown>
+          </ReportText>
+        </ReportTextContainer>
+      </ReportHolder>
     </MainSection>
   );
 };
 
-export default ArticleTemplate;
+export default ReportTemplate;
