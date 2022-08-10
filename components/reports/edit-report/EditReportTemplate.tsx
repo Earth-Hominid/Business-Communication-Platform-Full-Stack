@@ -8,14 +8,15 @@ import { PhotographIcon } from '@heroicons/react/outline';
 import ImageUpload from '@/components/image/ImageUpload';
 import Modal from '@/components/modal/Modal';
 
-type report = {
+interface ReportInterface {
+  id: string;
   title: string;
   description: string;
   category: string;
   content: string;
   slug: string;
   image: object;
-};
+}
 
 import {
   FormPageTitle,
@@ -34,7 +35,13 @@ import {
   ButtonHolder,
 } from './Styles';
 
-const EditReportTemplate = ({ report, token }) => {
+const EditReportTemplate = ({
+  report,
+  token,
+}: {
+  report: ReportInterface;
+  token: string;
+}) => {
   const [dataForm, setDataForm] = useState({
     title: report.title,
     category: report.category,
@@ -66,7 +73,7 @@ const EditReportTemplate = ({ report, token }) => {
       toast.error('Please fill in all empty fields.', { icon: false });
     }
 
-    const res = await fetch(`${API_URL}/articles/${report.id}`, {
+    const res = await fetch(`${API_URL}/reports/${report.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -92,8 +99,8 @@ const EditReportTemplate = ({ report, token }) => {
     setDataForm({ ...dataForm, [name]: value });
   };
 
-  const imageUploaded = async (e) => {
-    const res = await fetch(`${API_URL}/articles/${report.id}`);
+  const imageUploaded = async () => {
+    const res = await fetch(`${API_URL}/reports/${report.id}`);
     const data = await res.json();
     setImagePreview(data.image.formats.thumbnail.url);
     setShowModal(false);
@@ -101,7 +108,7 @@ const EditReportTemplate = ({ report, token }) => {
 
   return (
     <>
-      <FormPageTitle>Insira os detalhes do artigo abaixo.</FormPageTitle>
+      <FormPageTitle>Edite o relatório abaixo.</FormPageTitle>
       <ToastContainer
         position="top-right"
         autoClose={5000}

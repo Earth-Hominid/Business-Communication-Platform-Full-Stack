@@ -103,7 +103,7 @@ const DashboardPage = ({ articles, reports, token }: { token: string }) => {
       mainPageTitle="Rede BS docs"
       currentPage="#"
       styles="pb-10 p-2 sm:flex sm:justify-center"
-      width="max-w-5xl"
+      width="max-w-5xl mb-80"
       currentPageTitle={user !== null ? `Painel de ${user.username}` : ''}
     >
       <Welcome

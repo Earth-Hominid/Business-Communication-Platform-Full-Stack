@@ -101,7 +101,7 @@ const EditArticleTemplate = ({ article, token }) => {
 
   return (
     <>
-      <FormPageTitle>Insira os detalhes do artigo abaixo.</FormPageTitle>
+      <FormPageTitle>Edite os detalhes do artigo abaixo.</FormPageTitle>
       <ToastContainer
         position="top-right"
         autoClose={5000}

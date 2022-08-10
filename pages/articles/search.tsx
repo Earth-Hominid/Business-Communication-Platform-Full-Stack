@@ -4,7 +4,7 @@ import { Layout } from '@/components/Layout';
 import { API_URL } from '@/config/index';
 import ArticleItem from '@/components/articles/article-item/ArticleItem';
 
-type ArticlesAPIResponse = {
+interface ArticlesAPIResponse {
   id: string;
   title: string;
   category: string;
@@ -13,7 +13,7 @@ type ArticlesAPIResponse = {
   date: string;
   slug: string;
   description: string;
-};
+}
 
 type queryTerm = { queryTerm: string };
 type term = string;
@@ -31,17 +31,17 @@ export const getServerSideProps = async ({ query: { term } }) => {
   });
 
   // Fetch all articles
-  const res = await fetch(`${API_URL}/articles?${query}`);
-  const articles = await res.json();
+  const articleResponse = await fetch(`${API_URL}/articles?${query}`);
+  const articles = await articleResponse.json();
 
   return {
     props: { articles },
   };
 };
 
-const ArticleSearchPage: React.FC<{ articles: Array<string> }> = ({
-  articles,
-}) => {
+const ArticleSearchPage: React.FC<{
+  articles: Array<string>;
+}> = ({ articles }) => {
   const router = useRouter();
   const queryTerm = `PROCURAR RESULTADOS: ${router.query.term}`;
   const linkTerm = '/articles/';
@@ -62,7 +62,7 @@ const ArticleSearchPage: React.FC<{ articles: Array<string> }> = ({
         styles="pb-10 flex justify-center"
         width="max-w-5xl"
       >
-        <section className="h-screen">
+        <section className="min-h-screen">
           {articles.map((article) => (
             <ArticleItem key={article.id} article={article} />
           ))}

@@ -24,7 +24,7 @@ export async function getServerSideProps({ params: { id }, req }) {
     },
   };
 }
-const EditArticlePage = ({ report, token }) => {
+const EditReportPage = ({ report, token }) => {
   return (
     <>
       <Layout
@@ -32,8 +32,8 @@ const EditArticlePage = ({ report, token }) => {
         description="Editar um relatório"
         keywords="aprendendo,administrar, supermercado, eletromóveis, Editar um relatório"
         background="bg-gray-100"
-        mainPage="/reports"
-        mainPageTitle="Relatórios"
+        mainPage="/account/dashboard"
+        mainPageTitle="Painel da sua conta"
         currentPage="#"
         currentPageTitle="Editar relatório"
         styles=""
@@ -45,4 +45,4 @@ const EditArticlePage = ({ report, token }) => {
   );
 };
 
-export default EditArticlePage;
+export default EditReportPage;
