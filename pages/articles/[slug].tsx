@@ -49,7 +49,7 @@ const ArticlePage: React.FC<{ article: ArticleInterface }> = ({ article }) => {
       styles="pb-10 lg:flex lg:justify-center"
       width="max-w-5xl"
     >
-      <section className="">
+      <section className="min-h-screen">
         <ToastContainer />
         <ArticleTemplate articleData={article} />
       </section>

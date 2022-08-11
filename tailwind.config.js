@@ -11,11 +11,12 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        paytoneone: ['PaytoneOne', 'sans-serif'],
+        paytoneone: ['Paytone One', 'sans-serif'],
+        merriweather: ['Merriweather', 'serif'],
         montserrat: ['Montserrat', 'sans-serif'],
         roboto: ['Roboto', 'sans-serif'],
         rubik: ['Rubik', 'sans-serif'],
-        abrilfatface: ['AbrilFatface', 'sans-serif'],
+        abrilfatface: ['Abril Fatface', 'cursive'],
       },
     },
   },
