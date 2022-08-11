@@ -8,14 +8,15 @@ import { PhotographIcon } from '@heroicons/react/outline';
 import ImageUpload from '@/components/image/ImageUpload';
 import Modal from '@/components/modal/Modal';
 
-type article = {
+interface ArticleInterface {
+  id: string;
   title: string;
   description: string;
   category: string;
   content: string;
   slug: string;
   image: object;
-};
+}
 
 import {
   FormPageTitle,
@@ -34,7 +35,13 @@ import {
   ButtonHolder,
 } from './Styles';
 
-const EditArticleTemplate = ({ article, token }) => {
+const EditArticleTemplate = ({
+  article,
+  token,
+}: {
+  article: ArticleInterface;
+  token: string;
+}) => {
   const [dataForm, setDataForm] = useState({
     title: article.title,
     category: article.category,
