@@ -4,56 +4,49 @@ export const MainSection = tw.section`
   min-h-screen
 `;
 
-export const TopHeading = tw.div`
-  flex
-  flex-row
-  w-full
-  items-center
-  py-6
-  px-5
-  justify-between
-  text-xs
+export const TopContainer = tw.div`
+  m-8
+  sm:m-10
+  md:m-12
+`;
+
+export const CategoryText = tw.h6`
+  text-[#FF8600]
+ tracking-wide
   uppercase
-  font-[Montserrat]
-  md:p-10
-  lg:px-20
+  font-semibold
+  text-[10px]
+  font-montserrat
+  mt-5
+  mb-2
 `;
 
-export const InformationContainer = tw.div`
-  flex 
-  flex-row 
-  space-x-4
-  items-center
+export const PageTitle = tw.div`
+  text-[#1A1A1A]
+  text-2xl
+  sm:text-3xl
+  font-extrabold
+  uppercase
+  font-["AbrilFatface"]
+  text-left
+  tracking-wide
+  leading-tight
 `;
 
-export const HeadingTextContainer = tw.h2`
-  text-[#EDBD77]
-  font-bold
+export const DateText = tw.h6`
+italic
+text-slate-600
+ text-[9px]
+ my-2
 `;
 
-export const StoreLogo = tw.div`
-  rounded-md
-  bg-[#EDBD77]
-  text-white
-  px-2
-  py-1
-`;
-
-export const DirectionContainer = tw.div`
-  flex
-  flex-row
-  items-center
-  rounded-md
-  bg-black
-  text-[#FEF336]
-  px-2
-  py-1
-  hover:bg-transparent
-  hover:text-black
-  duration-400
-  transition
-  ease-in-out
-  cursor-pointer
+export const DescriptionText = tw.div`
+  italic
+  text-stone-500
+  font-merriweather
+  my-5
+  tracking-wide
+  leading-relaxed
 `;
 
 export const IconContainer = tw.div`
@@ -61,21 +54,6 @@ export const IconContainer = tw.div`
   h-5
   mr-1
 `;
-
-export const PageTitle = tw.div`
-  text-[#1A1A1A]
-  text-2xl
-  text-center
-  leading-relaxed
-  font-bold
-  uppercase
-  font-["AbrilFatface"]
-  pb-2
-  md:pb-10
-  md:text-4xl
-  md:mx-6
-  mx-4
-  `;
 
 export const ImageContainer = tw.div`
   w-full
@@ -99,7 +77,7 @@ export const ArticleTextContainer = tw.div`
 export const ArticleText = tw.div`
   text-[#1a1a1a]
   leading-8
-  font-['Merriweather']
+  font-merriweather
    prose
 `;
 

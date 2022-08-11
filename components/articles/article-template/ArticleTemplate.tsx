@@ -3,16 +3,16 @@ import ReactMarkdown from 'react-markdown';
 
 import {
   MainSection,
-  TopHeading,
+  TopContainer,
+  DateText,
   PageTitle,
+  DescriptionText,
   Caption,
-  StoreLogo,
-  HeadingTextContainer,
+  CategoryText,
   ImageContainer,
   ArticleTextContainer,
   ArticleText,
   ArticleHolder,
-  InformationContainer,
 } from './Styles';
 
 type article = {
@@ -38,20 +38,18 @@ const ArticleTemplate: React.FC<{ article: article }> = ({ articleData }) => {
 
   return (
     <MainSection>
-      <TopHeading>
-        <InformationContainer>
-          <StoreLogo>{article.category}</StoreLogo>
-          <HeadingTextContainer>
-            {new Date(article.created_at).toLocaleDateString('en-US')}
-          </HeadingTextContainer>
-        </InformationContainer>
-      </TopHeading>
-
-      <PageTitle>{article.title}</PageTitle>
+      <TopContainer>
+        <CategoryText>{article.category}</CategoryText>
+        <PageTitle>{article.title}</PageTitle>
+        <DateText>
+          {new Date(article.created_at).toLocaleDateString('en-US')}
+        </DateText>
+        <DescriptionText>{article.description}</DescriptionText>
+      </TopContainer>
       <ArticleHolder>
         <ImageContainer>
           <Image
-            className="absolute rounded-md"
+            className="absolute lg:rounded-md"
             src={
               article.image
                 ? article.image.formats.large.url
@@ -65,9 +63,7 @@ const ArticleTemplate: React.FC<{ article: article }> = ({ articleData }) => {
             loader={loaderProp}
           />
         </ImageContainer>
-        <Caption>
-          <ReactMarkdown>{article.description}</ReactMarkdown>
-        </Caption>
+
         <ArticleTextContainer>
           <ArticleText>
             <ReactMarkdown>{article.content}</ReactMarkdown>

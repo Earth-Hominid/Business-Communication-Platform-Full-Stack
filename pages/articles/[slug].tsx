@@ -41,7 +41,7 @@ const ArticlePage: React.FC<{ article: ArticleInterface }> = ({ article }) => {
       title={`${article.title}`}
       description={`${article.description}`}
       keywords={`${article.title}`}
-      background={`bg-[#F4F0E8]`}
+      background={`bg-white`}
       mainPage="/articles"
       mainPageTitle="Artigos"
       currentPage={`#`}
