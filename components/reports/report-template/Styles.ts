@@ -1,6 +1,7 @@
 import tw from 'tailwind-styled-components';
 
 export const MainSection = tw.section`
+min-h-screen
 `;
 
 export const TopHeading = tw.div`
