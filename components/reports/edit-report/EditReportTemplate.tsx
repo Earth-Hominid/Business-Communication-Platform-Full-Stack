@@ -11,11 +11,16 @@ import Modal from '@/components/modal/Modal';
 interface ReportInterface {
   id: string;
   title: string;
-  description: string;
   category: string;
+  image: Array<string>;
   content: string;
+  date: string;
+  description: string;
   slug: string;
-  image: object;
+  owner: string;
+  published_at: string;
+  created_at: string;
+  updated_at: string;
 }
 
 import {
