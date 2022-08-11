@@ -17,6 +17,8 @@ module.exports = {
         roboto: ['Roboto', 'sans-serif'],
         rubik: ['Rubik', 'sans-serif'],
         abrilfatface: ['Abril Fatface', 'cursive'],
+        tinos: ['Tinos', 'serif'],
+        nunito: ['Nunito', 'sans-serif'],
       },
     },
   },
