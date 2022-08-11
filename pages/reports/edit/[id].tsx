@@ -1,6 +1,6 @@
 import { Layout } from '@/components/Layout';
 import { parseCookies } from '@/helpers/index';
-import { API_URL } from 'config';
+import { API_URL } from 'config/index';
 import EditReportTemplate from '@/components/reports/edit-report/EditReportTemplate';
 import { NextApiRequest } from 'next';
 
@@ -8,7 +8,7 @@ interface ReportInterface {
   id: string;
   title: string;
   category: string;
-  image: URL;
+  image: object;
   content: string;
   date: string;
   description: string;

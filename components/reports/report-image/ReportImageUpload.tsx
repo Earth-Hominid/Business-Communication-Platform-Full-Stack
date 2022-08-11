@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { API_URL } from '@/config/index';
 import { FileInput, FormContainer, SubmitInput } from './Styles';
 
-const ReportImageUpload = ({ reportId, imageUploaded, imageId, token }) => {
+const ReportImageUpload = ({ reportId, imageUploaded, token }) => {
   const [image, setImage] = useState(null);
 
   const handleFileChange = (e) => {
@@ -13,7 +13,7 @@ const ReportImageUpload = ({ reportId, imageUploaded, imageId, token }) => {
     e.preventDefault();
     const formData = new FormData();
     formData.append(`files`, image);
-    formData.append('ref', 'articles');
+    formData.append('ref', 'reports');
     formData.append('refId', reportId);
     formData.append('field', 'image');
 

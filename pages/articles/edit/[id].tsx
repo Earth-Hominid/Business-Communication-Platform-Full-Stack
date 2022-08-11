@@ -1,6 +1,6 @@
 import { Layout } from '@/components/Layout';
 import { parseCookies } from '@/helpers/index';
-import { API_URL } from 'config';
+import { API_URL } from 'config/index';
 import EditArticleTemplate from '@/components/articles/edit-article/EditArticleTemplate';
 
 interface ArticleInterface {
