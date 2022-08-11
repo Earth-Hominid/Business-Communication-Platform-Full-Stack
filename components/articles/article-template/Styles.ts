@@ -47,6 +47,8 @@ export const DescriptionText = tw.div`
   my-5
   tracking-wide
   leading-relaxed
+  sm:mx-16
+  md:mx-20
 `;
 
 export const IconContainer = tw.div`
