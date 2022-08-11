@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { API_URL } from '@/config/index';
 import { PhotographIcon } from '@heroicons/react/outline';
-import ImageUpload from '@/components/image/ImageUpload';
+import ReportImageUpload from '@/components/reports/report-image/ReportImageUpload';
 import Modal from '@/components/modal/Modal';
 
 interface ReportInterface {
@@ -99,8 +99,13 @@ const EditReportTemplate = ({
     setDataForm({ ...dataForm, [name]: value });
   };
 
-  const imageUploaded = async () => {
-    const res = await fetch(`${API_URL}/reports/${report.id}`);
+  const imageUploaded = async (e) => {
+    const res = await fetch(`${API_URL}/reports/${report.id}`, {
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+    });
     const data = await res.json();
     setImagePreview(data.image.formats.thumbnail.url);
     setShowModal(false);
@@ -209,8 +214,8 @@ const EditReportTemplate = ({
           show={showModal}
           onClose={() => setShowModal(false)}
         >
-          <ImageUpload
-            articleId={report.id}
+          <ReportImageUpload
+            reportId={report.id}
             imageUploaded={imageUploaded}
             imageId={imageId}
             token={token}

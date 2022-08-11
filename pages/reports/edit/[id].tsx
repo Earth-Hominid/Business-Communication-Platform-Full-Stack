@@ -2,16 +2,24 @@ import { Layout } from '@/components/Layout';
 import { parseCookies } from '@/helpers/index';
 import { API_URL } from 'config';
 import EditReportTemplate from '@/components/reports/edit-report/EditReportTemplate';
+import { NextApiRequest } from 'next';
 
-type res = {
+interface ReportInterface {
   id: string;
   title: string;
-  store: string;
   category: string;
+  image: URL;
+  content: string;
+  date: string;
   description: string;
-};
+  slug: string;
+  owner: string;
+  published_at: string;
+  created_at: string;
+  updated_at: string;
+}
 
-export async function getServerSideProps({ params: { id }, req }) {
+export const getServerSideProps = async ({ params: { id }, req }) => {
   const { token } = parseCookies(req);
 
   const res = await fetch(`${API_URL}/reports/${id}`);
@@ -23,8 +31,15 @@ export async function getServerSideProps({ params: { id }, req }) {
       token,
     },
   };
-}
-const EditReportPage = ({ report, token }) => {
+};
+
+const EditReportPage = ({
+  report,
+  token,
+}: {
+  report: ReportInterface;
+  token: string;
+}) => {
   return (
     <>
       <Layout
