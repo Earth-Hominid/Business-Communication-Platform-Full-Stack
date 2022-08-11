@@ -1,6 +1,6 @@
 import { HeaderContainer, MainSection, Title } from './Styles';
 import ArticleCard from '../article-card/ArticleCard';
-import ReportCard from '../../dashboard/report-card/ReportCard';
+import ReportCard from '../report-card/ReportCard';
 
 const Welcome = ({ articles, user, reports, deleteArticle, deleteReport }) => {
   return (
