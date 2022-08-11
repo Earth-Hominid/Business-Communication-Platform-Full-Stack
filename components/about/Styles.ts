@@ -7,12 +7,10 @@ export const MainSection = tw.section`
  relative
  bg-gray-100
  min-h-[250px]
- border-b-2	
- border-gray-300
 `;
 
 export const TextContainer = tw.div`
-  m-6
+  m-10
   sm:mx-12
   sm:mt-8
   md:mx-20
@@ -26,19 +24,20 @@ export const HeadingText = tw.h1`
   lg:text-6xl
   font-extrabold
   leading-tight
-  tracking-wide
   font-tinos
   text-left
   text-gray-900
+  tracking-wide
 `;
 
 export const SubheadingText = tw.h2`
   text-gray-600
   font-montserrat
   leading-relaxed
+  tracking-wide
   md:mt-10
   lg:mt-12
   my-5
   text-left
-  md:text-lg
+  text-lg
 `;

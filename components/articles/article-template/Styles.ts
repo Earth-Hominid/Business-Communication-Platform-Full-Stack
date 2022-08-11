@@ -25,9 +25,7 @@ export const PageTitle = tw.div`
   text-[#1A1A1A]
   text-2xl
   sm:text-3xl
-  font-extrabold
-  uppercase
-  font-["AbrilFatface"]
+  font-abrilfatface
   text-left
   tracking-wide
   leading-tight

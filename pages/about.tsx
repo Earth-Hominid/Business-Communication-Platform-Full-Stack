@@ -1,6 +1,8 @@
 import { Layout } from '@/components/Layout';
+import AboutShowcase from '@/components/about/AboutShowcase';
 
 export default function AboutPage() {
+  const background = 'bg-gray-100';
   return (
     <Layout
       mainPage="/"
@@ -9,16 +11,13 @@ export default function AboutPage() {
       currentPageTitle="Rede BS Docs"
       title="Sobre nós"
       description="Sobre nós"
+      background={background}
       keywords="Sobre nós"
       styles="pb-10 flex justify-center"
       width="max-w-5xl"
     >
-      <div className="flex flex-col m-5 p-5">
-        <p className="text-left font-rubik text-lg leading-relaxed text-gray-600">
-          A Rede BS docs foi criada para ajudar os trabalhadores a preencher
-          suas lacunas de conhecimento e avançar em suas carreiras.
-        </p>
-      </div>
+      <AboutShowcase />
+      <div className="flex flex-col m-5 p-5 min-h-screen"></div>
     </Layout>
   );
 }

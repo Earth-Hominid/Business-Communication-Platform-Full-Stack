@@ -10,11 +10,13 @@ import {
 import { ExclamationIcon } from '@heroicons/react/outline';
 
 const NotFound = () => {
+  const background = 'bg-[#F4F0E8]';
   return (
     <Layout
       title="404 Not Found"
       keywords="404 Not Found"
       description="404 Not Found"
+      background={background}
       mainPage="/"
       mainPageTitle="Rede BS Docs"
       currentPage="#"

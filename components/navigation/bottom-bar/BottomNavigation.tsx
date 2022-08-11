@@ -61,11 +61,10 @@ const BottomNavigation = () => {
     title: 'Aprendendo',
     datapoints: [
       {
-        name: 'Eletromóveis',
+        name: 'Cadeia de mantimentos',
         id: '1',
-        url: '#',
+        url: '/supply-chain',
       },
-      { name: 'Farmácia', id: '2', url: '#' },
       { name: 'Supermercado', id: '3', url: '#' },
     ],
   };

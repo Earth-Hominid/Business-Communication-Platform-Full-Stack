@@ -5,7 +5,7 @@ import {
   SubheadingText,
 } from './Styles';
 
-const Showcase = () => {
+const AboutShowcase = () => {
   return (
     <>
       <MainSection>
@@ -14,9 +14,9 @@ const Showcase = () => {
             Iluminando inteligência de negócios e pesquisa de varejo.
           </HeadingText>
           <SubheadingText>
-            A <b className="font-extrabold text-gray-900">Rede BS docs</b> está
-            comprometida com uma visão de negócios aprofundada que atende ao
-            crescimento de nossos funcionários.
+            A <b className="font-extrabold text-gray-900">Rede BS docs</b> foi
+            criada para ajudar os trabalhadores a preencher suas lacunas de
+            conhecimento e avançar em suas carreiras.
           </SubheadingText>
         </TextContainer>
       </MainSection>
@@ -24,4 +24,4 @@ const Showcase = () => {
   );
 };
 
-export default Showcase;
+export default AboutShowcase;
