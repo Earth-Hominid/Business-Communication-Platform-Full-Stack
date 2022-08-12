@@ -3,6 +3,7 @@ import { API_URL } from '@/config/index';
 import { parseCookies } from '@/helpers/index';
 import ReportItem from '@/components/reports/report-item/ReportItem';
 import { NextApiRequest } from 'next';
+const PER_PAGE = 5;
 
 interface ReportInterface {
   id: string;
