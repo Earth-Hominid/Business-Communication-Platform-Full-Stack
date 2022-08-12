@@ -69,17 +69,23 @@ const DropdownMenu = () => {
       )}
       <MenuList />
       <MenuHeader>Aprendendo</MenuHeader>
+      <Link href="/atendimento-ao-cliente">
+        <ButtonHolder>
+          <p className="ml-1">Atendimento ao Cliente</p>
+        </ButtonHolder>
+      </Link>
       <Link href="/supply-chain">
         <ButtonHolder>
           <p className="ml-1">Cadeia de mantimentos</p>
         </ButtonHolder>
       </Link>
-      <Link href="#">
+      <MenuList />
+      <MenuHeader>Supermercado</MenuHeader>
+      <Link href="/hortifruti">
         <ButtonHolder>
-          <p className="ml-1">Supermercado</p>
+          <p className="ml-1">Hortifruti</p>
         </ButtonHolder>
       </Link>
-      <MenuList />
       <MenuHeader>Rede BS</MenuHeader>
       <Link href="/about">
         <ButtonHolder>

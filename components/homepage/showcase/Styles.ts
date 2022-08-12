@@ -22,7 +22,8 @@ export const TextContainer = tw.div`
 
 export const HeadingText = tw.h1`
   text-3xl
-  md:text-4xl
+  sm:text-4xl
+  md:text-5xl
   lg:text-6xl
   font-extrabold
   leading-tight
