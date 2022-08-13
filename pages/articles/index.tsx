@@ -41,7 +41,7 @@ const ArticlePage: React.FC<{ articles: Array<string> }> = ({
   page,
   total,
 }) => {
-  const background = 'bg-[#F4F0E8]';
+  const background = 'bg-gray-100';
   const queryTerm = 'Artigos';
   const linkTerm = '/';
 

@@ -29,18 +29,11 @@ const HomePage: NextPage = ({ articles }) => {
           styles="pb-10 flex justify-center"
           width="max-w-5xl"
         >
-          <Homepage />
           {articles.length === 0 && <h3>No articles available</h3>}
 
           {articles.map((article: any) => (
             <ArticleItem key={article.id} article={article} />
           ))}
-
-          {/* {articles.length > 0 && (
-            <Link href="/articles">
-              <a>View All Articles</a>
-            </Link>
-          )} */}
         </Layout>
       </div>
     </>

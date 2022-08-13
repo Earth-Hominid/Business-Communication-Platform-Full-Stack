@@ -52,20 +52,35 @@ const BottomNavigation = () => {
     handleLightThemeToggle();
   };
 
-  const subforumObject = {
+  const BusinessObject = {
     title: 'Rede BS',
     datapoints: [{ name: 'Sobre nós', id: '1', url: '/about/' }],
   };
 
-  const popularSubforumObject = {
+  const LearningObject = {
     title: 'Aprendendo',
     datapoints: [
       {
-        name: 'Cadeia de mantimentos',
+        name: 'Atendimento ao Cliente',
         id: '1',
+        url: '/atendimento-ao-cliente',
+      },
+      {
+        name: 'Cadeia de mantimentos',
+        id: '2',
         url: '/supply-chain',
       },
-      { name: 'Supermercado', id: '3', url: '#' },
+    ],
+  };
+
+  const StoreObject = {
+    title: 'Supermercado',
+    datapoints: [
+      {
+        name: 'Hortifruti',
+        id: '1',
+        url: '/hortifruti',
+      },
     ],
   };
 
@@ -133,8 +148,9 @@ const BottomNavigation = () => {
         )}
       </ActionButtonHolder>
       <NavigationMenu>
-        <MenuAccordian props={popularSubforumObject} />
-        <MenuAccordian props={subforumObject} />
+        <MenuAccordian props={StoreObject} />
+        <MenuAccordian props={LearningObject} />
+        <MenuAccordian props={BusinessObject} />
       </NavigationMenu>
     </BottomNavigationMenu>
   );
