@@ -1,8 +1,7 @@
 import { Layout } from '@/components/Layout';
 import qs from 'qs';
 import ArticleItem from '@/components/articles/article-item/ArticleItem';
-import { API_URL } from '@/config/index';
-const PER_PAGE = 5;
+import { API_URL, PER_PAGE } from '@/config/index';
 
 type articles = {
   id: string;
