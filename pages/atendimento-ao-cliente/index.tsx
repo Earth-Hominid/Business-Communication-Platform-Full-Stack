@@ -26,8 +26,8 @@ export const getServerSideProps = async ({ query: { page = 1 } }) => {
   const query = qs.stringify({
     _where: {
       _or: [
-        { title_contains: 'Hortifruti' },
-        { category_contains: 'Hortifruti' },
+        { title_contains: 'Atendimento ao Cliente' },
+        { category_contains: 'Atendimento ao Cliente' },
       ],
     },
   });
@@ -60,12 +60,12 @@ const HortifrutiPage: React.FC<{ articles: Array<string> }> = ({
         mainPage="/"
         mainPageTitle="Rede BS Docs"
         currentPage="#"
-        currentPageTitle="Hortifruti"
+        currentPageTitle="Atendimento ao Cliente"
         styles="pb-10 flex justify-center"
         width="max-w-5xl"
       >
         <section className="min-h-screen">
-          {articles.length === 0 && <h3>No articles to show</h3>}
+          {articles.length === 0 && <h3>Nenhum artigo para mostrar</h3>}
 
           {articles.map((article) => (
             <ArticleItem key={article.id} article={article} />
