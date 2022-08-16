@@ -26,7 +26,7 @@ const HomePage: NextPage = ({ articles }) => {
           mainPageTitle="Rede BS Docs"
           currentPage=""
           currentPageTitle="Rede BS Docs"
-          styles="pb-10 flex justify-center"
+          styles="pb-10 flex justify-center min-h-screen"
           width="max-w-5xl"
         >
           {articles.length === 0 && <h3>No articles available</h3>}

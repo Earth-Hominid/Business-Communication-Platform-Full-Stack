@@ -29,7 +29,9 @@ type article = {
   image: string;
 };
 
-const ArticleTemplate: React.FC<{ article: article }> = ({ articleData }) => {
+const ArticleTemplate: React.FC<{ articleData: article }> = ({
+  articleData,
+}) => {
   const loaderProp = ({ src }) => {
     return src;
   };
