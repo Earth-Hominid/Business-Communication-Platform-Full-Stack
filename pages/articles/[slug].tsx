@@ -3,7 +3,6 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Layout } from '@/components/Layout';
 import { API_URL } from 'config';
-
 import ArticleTemplate from '@/components/articles/article-template/ArticleTemplate';
 
 interface Props {
@@ -14,7 +13,7 @@ interface Props {
     category: string;
     image: {
       formats: {
-        thumbnail: {
+        large: {
           url: string;
         };
       };
