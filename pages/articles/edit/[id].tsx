@@ -1,24 +1,41 @@
+import { GetServerSideProps } from 'next';
+import type { NextApiRequest, NextApiResponse } from 'next';
 import { Layout } from '@/components/Layout';
 import { parseCookies } from '@/helpers/index';
 import { API_URL } from 'config/index';
 import EditArticleTemplate from '@/components/articles/edit-article/EditArticleTemplate';
 
-interface ArticleInterface {
-  id: string;
-  title: string;
-  category: string;
-  image: URL;
-  content: string;
-  date: string;
-  description: string;
-  slug: string;
-  owner: string;
-  published_at: string;
-  created_at: string;
-  updated_at: string;
+interface Props {
+  token: string;
+  article: {
+    id: string;
+    title: string;
+    category: string;
+    image: {
+      formats: {
+        thumbnail: {
+          url: string;
+        };
+      };
+    };
+    content: string;
+    date: string;
+    description: string;
+    slug: string;
+    owner: string;
+    published_at: string;
+    created_at: string;
+    updated_at: string;
+  };
 }
 
-export async function getServerSideProps({ params: { id }, req }) {
+export const getServerSideProps = async ({
+  params: { id },
+  req,
+}: {
+  params: { id: string };
+  req: NextApiRequest;
+}) => {
   const { token } = parseCookies(req);
 
   const res = await fetch(`${API_URL}/articles/${id}`);
@@ -30,14 +47,8 @@ export async function getServerSideProps({ params: { id }, req }) {
       token,
     },
   };
-}
-const EditArticlePage = ({
-  article,
-  token,
-}: {
-  article: ArticleInterface;
-  token: string;
-}) => {
+};
+const EditArticlePage: React.FC<Props> = ({ article, token }) => {
   return (
     <>
       <Layout

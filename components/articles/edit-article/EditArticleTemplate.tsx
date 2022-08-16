@@ -12,7 +12,13 @@ interface ArticleInterface {
   id: string;
   title: string;
   category: string;
-  image: Array<string>;
+  image: {
+    formats: {
+      thumbnail: {
+        url: string;
+      };
+    };
+  };
   content: string;
   date: string;
   description: string;

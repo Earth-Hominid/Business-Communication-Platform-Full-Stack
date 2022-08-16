@@ -15,28 +15,33 @@ import {
   ArticleHolder,
 } from './Styles';
 
-type article = {
+interface ArticleInterface {
   id: string;
   title: string;
+  category: string;
+  image: {
+    formats: {
+      large: {
+        url: string;
+      };
+    };
+  };
   content: string;
+  date: string;
   description: string;
   slug: string;
   owner: string;
-  category: string;
   published_at: string;
   created_at: string;
   updated_at: string;
-  image: string;
-};
+}
 
-const ArticleTemplate: React.FC<{ articleData: article }> = ({
-  articleData,
+const ArticleTemplate: React.FC<{ article: ArticleInterface }> = ({
+  article,
 }) => {
-  const loaderProp = ({ src }) => {
+  const loaderProp = ({ src }: { src: any }) => {
     return src;
   };
-
-  let article = articleData;
 
   return (
     <MainSection>

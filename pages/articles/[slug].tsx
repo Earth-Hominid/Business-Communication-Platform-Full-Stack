@@ -1,25 +1,38 @@
-import { Layout } from '@/components/Layout';
-import { API_URL } from 'config';
-import ArticleTemplate from '@/components/articles/article-template/ArticleTemplate';
+import { GetServerSideProps } from 'next';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Layout } from '@/components/Layout';
+import { API_URL } from 'config';
 
-interface ArticleInterface {
-  id: string;
-  title: string;
-  category: string;
-  image: URL;
-  content: string;
-  date: string;
-  description: string;
+import ArticleTemplate from '@/components/articles/article-template/ArticleTemplate';
+
+interface Props {
   slug: string;
-  owner: string;
-  published_at: string;
-  created_at: string;
-  updated_at: string;
+  article: {
+    id: string;
+    title: string;
+    category: string;
+    image: {
+      formats: {
+        thumbnail: {
+          url: string;
+        };
+      };
+    };
+    content: string;
+    date: string;
+    description: string;
+    slug: string;
+    owner: string;
+    published_at: string;
+    created_at: string;
+    updated_at: string;
+  };
 }
 
-export const getServerSideProps = async ({ query: { slug } }) => {
+export const getServerSideProps: GetServerSideProps = async ({
+  query: { slug },
+}) => {
   // fetch articles
   const res = await fetch(`${API_URL}/articles?slug=${slug}
   `);
@@ -33,7 +46,7 @@ export const getServerSideProps = async ({ query: { slug } }) => {
   };
 };
 
-const ArticlePage: React.FC<{ article: ArticleInterface }> = ({ article }) => {
+const ArticlePage: React.FC<Props> = ({ article }) => {
   if (!article) return <div>Loading...</div>;
 
   return (
@@ -51,7 +64,7 @@ const ArticlePage: React.FC<{ article: ArticleInterface }> = ({ article }) => {
     >
       <section className="min-h-screen">
         <ToastContainer />
-        <ArticleTemplate articleData={article} />
+        <ArticleTemplate article={article} />
       </section>
     </Layout>
   );

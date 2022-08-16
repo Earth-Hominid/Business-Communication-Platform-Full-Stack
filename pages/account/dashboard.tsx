@@ -7,8 +7,16 @@ import { useRouter } from 'next/router';
 import Welcome from '@/components/dashboard/welcome-page/Welcome';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { GetServerSideProps } from 'next';
+import type { NextApiRequest, NextApiResponse } from 'next';
 
-export const getServerSideProps = async ({ req }: { req: any }) => {
+type Props = {
+  articles: object;
+  reports: object;
+  token: string;
+};
+
+export const getServerSideProps: GetServerSideProps = async ({ req }) => {
   const { token } = parseCookies(req);
 
   // Fetch all articles
@@ -41,7 +49,7 @@ export const getServerSideProps = async ({ req }: { req: any }) => {
   };
 };
 
-const DashboardPage = ({ articles, reports, token }: { token: string }) => {
+const DashboardPage: React.FC<Props> = ({ articles, reports, token }) => {
   const [initialPage, setInitialPage] = useState(true);
   const [modal, setModal] = useState(false);
 
