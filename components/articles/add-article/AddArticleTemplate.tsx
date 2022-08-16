@@ -1,6 +1,17 @@
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+interface Props {
+  dataForm: {
+    title: string;
+    category: string;
+    description: string;
+    content: string;
+  };
+  handleInputChange: Function;
+  handleSubmit: Function;
+}
+
 import {
   FormPageTitle,
   FormContainer,
@@ -12,7 +23,11 @@ import {
   WideTextArea,
 } from './Styles';
 
-const AddArticleTemplate = ({ handleInputChange, handleSubmit, dataForm }) => {
+const AddArticleTemplate: React.FC<Props> = ({
+  handleInputChange,
+  handleSubmit,
+  dataForm,
+}) => {
   return (
     <>
       <FormPageTitle>Insira os detalhes do artigo abaixo.</FormPageTitle>
