@@ -80,7 +80,6 @@ export default function AddArticlePage({ token }: { token: string }) {
         width="w-full"
       >
         <AddArticleTemplate
-          token={token}
           handleSubmit={handleSubmit}
           handleInputChange={handleInputChange}
           dataForm={dataForm}
