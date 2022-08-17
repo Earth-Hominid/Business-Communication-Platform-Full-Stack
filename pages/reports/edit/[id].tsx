@@ -6,6 +6,7 @@ import { NextApiRequest } from 'next';
 
 interface Props {
   token: string;
+  imageId: string;
   report: {
     id: string;
     title: string;
