@@ -4,7 +4,7 @@ import { API_URL } from '@/config/index';
 import Pagination from '@/components/pagination/Pagination';
 import { PER_PAGE } from '@/config/index';
 
-interface Article {
+interface ArticleInterface {
   id: string;
   title: string;
   category: string;
@@ -31,7 +31,7 @@ interface Article {
 interface Props {
   page: number;
   total: number;
-  articles: Array<Article>;
+  articles: Array<ArticleInterface>;
 }
 
 export const getServerSideProps = async ({

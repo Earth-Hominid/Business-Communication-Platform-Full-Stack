@@ -16,8 +16,33 @@ import {
   CardContainer,
 } from './Styles';
 import Image from 'next/image';
+import React from 'react';
 
-const ReportCard = ({ report, handleDelete }) => {
+interface Props {
+  handleDelete: Function;
+  report: {
+    id: string;
+    title: string;
+    category: string;
+    image: {
+      formats: {
+        thumbnail: {
+          url: string;
+        };
+      };
+    };
+    content: string;
+    date: string;
+    description: string;
+    slug: string;
+    owner: string;
+    published_at: string;
+    created_at: string;
+    updated_at: string;
+  };
+}
+
+const ReportCard: React.FC<Props> = ({ report, handleDelete }) => {
   return (
     <>
       <MainContainer>

@@ -17,7 +17,31 @@ import {
 } from './Styles';
 import Image from 'next/image';
 
-const ArticleCard = ({ article, handleDelete }) => {
+interface Props {
+  handleDelete: Function;
+  article: {
+    id: string;
+    title: string;
+    category: string;
+    image: {
+      formats: {
+        thumbnail: {
+          url: string;
+        };
+      };
+    };
+    content: string;
+    date: string;
+    description: string;
+    slug: string;
+    owner: string;
+    published_at: string;
+    created_at: string;
+    updated_at: string;
+  };
+}
+
+const ArticleCard: React.FC<Props> = ({ article, handleDelete }) => {
   return (
     <>
       <MainContainer>

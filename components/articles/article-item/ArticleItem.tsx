@@ -18,21 +18,34 @@ import {
   DesktopAuthorContainer,
 } from './Styles';
 
-type article = {
+interface ArticleInterface {
   id: string;
   title: string;
+  category: string;
+  image: {
+    formats: {
+      thumbnail: {
+        url: string;
+      };
+      large: {
+        url: string;
+      };
+      medium: {
+        url: string;
+      };
+    };
+  };
   content: string;
+  date: string;
   description: string;
   slug: string;
   owner: string;
-  category: string;
   published_at: string;
   created_at: string;
   updated_at: string;
-  image: string;
-};
+}
 
-const ArticleItem = ({ article }) => {
+const ArticleItem = ({ article }: { article: ArticleInterface }) => {
   return (
     <>
       <MainSection>

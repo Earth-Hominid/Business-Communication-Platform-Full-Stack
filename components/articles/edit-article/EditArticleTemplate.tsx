@@ -1,6 +1,6 @@
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { API_URL } from '@/config/index';
@@ -72,7 +72,7 @@ const EditArticleTemplate = ({
 
   const router = useRouter();
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
 
     // validation
@@ -110,7 +110,7 @@ const EditArticleTemplate = ({
     setDataForm({ ...dataForm, [name]: value });
   };
 
-  const imageUploaded = async (e) => {
+  const imageUploaded = async (e: any) => {
     const res = await fetch(`${API_URL}/articles/${article.id}`);
     const data = await res.json();
     setImagePreview(data.image.formats.thumbnail.url);
@@ -223,7 +223,6 @@ const EditArticleTemplate = ({
           <ImageUpload
             articleId={article.id}
             imageUploaded={imageUploaded}
-            imageId={imageId}
             token={token}
           />
         </Modal>
