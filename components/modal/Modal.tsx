@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import {
   StyledModalBody,
@@ -11,18 +11,18 @@ import {
 import { XCircleIcon } from '@heroicons/react/outline';
 
 interface Props {
-  onClose: (event: React.MouseEvent<HTMLElement>) => void;
+  onClose: Function;
   show: boolean;
   title: string;
-  children: Array<any>;
+  children?: JSX.Element | JSX.Element[];
 }
 
-const Modal = ({ show, onClose, children, title }) => {
+const Modal: React.FC<Props> = ({ show, onClose, children, title }) => {
   const [isBrowser, setIsBrowser] = useState(false);
 
   useEffect(() => setIsBrowser(true), []);
 
-  const handleClose = (e) => {
+  const handleClose = (e: any) => {
     e.preventDefault();
     onClose();
   };
@@ -48,7 +48,7 @@ const Modal = ({ show, onClose, children, title }) => {
   if (isBrowser) {
     return ReactDOM.createPortal(
       modalContent,
-      document.getElementById('modal-root')
+      document.getElementById('modal-root')!
     );
   } else {
     return null;
