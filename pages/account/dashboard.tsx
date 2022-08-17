@@ -10,13 +10,72 @@ import 'react-toastify/dist/ReactToastify.css';
 import { GetServerSideProps } from 'next';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-type Props = {
-  articles: object;
-  reports: object;
-  token: string;
-};
+interface ArticleInterface {
+  id: string;
+  title: string;
+  category: string;
+  image: {
+    formats: {
+      thumbnail: {
+        url: string;
+      };
+      large: {
+        url: string;
+      };
+      medium: {
+        url: string;
+      };
+    };
+  };
+  content: string;
+  date: string;
+  description: string;
+  slug: string;
+  owner: string;
+  published_at: string;
+  created_at: string;
+  updated_at: string;
+}
 
-export const getServerSideProps: GetServerSideProps = async ({ req }) => {
+interface ReportInterface {
+  id: string;
+  title: string;
+  category: string;
+  image: {
+    formats: {
+      thumbnail: {
+        url: string;
+      };
+      large: {
+        url: string;
+      };
+      medium: {
+        url: string;
+      };
+    };
+  };
+  content: string;
+  date: string;
+  description: string;
+  slug: string;
+  owner: string;
+  published_at: string;
+  created_at: string;
+  updated_at: string;
+}
+
+interface Props {
+  deleteArticle: Function;
+  deleteReport: Function;
+  articles: Array<ArticleInterface>;
+  reports: Array<ReportInterface>;
+  user: {
+    username: string;
+  };
+  token: string;
+}
+
+export const getServerSideProps = async ({ req }: { req: NextApiRequest }) => {
   const { token } = parseCookies(req);
 
   // Fetch all articles
