@@ -3,22 +3,38 @@ import qs from 'qs';
 import ArticleItem from '@/components/articles/article-item/ArticleItem';
 import { API_URL } from '@/config/index';
 
-type articles = {
+interface Article {
   id: string;
   title: string;
+  category: string;
+  image: {
+    formats: {
+      thumbnail: {
+        url: string;
+      };
+      large: {
+        url: string;
+      };
+      medium: {
+        url: string;
+      };
+    };
+  };
   content: string;
+  date: string;
   description: string;
   slug: string;
   owner: string;
-  category: string;
   published_at: string;
   created_at: string;
   updated_at: string;
-  image: string;
-};
+}
 
-type queryTerm = { queryTerm: string };
-type term = string;
+interface Props {
+  page: number;
+  total: number;
+  articles: Array<Article>;
+}
 
 export const getServerSideProps = async () => {
   // Fetch all articles
@@ -40,9 +56,7 @@ export const getServerSideProps = async () => {
   };
 };
 
-const SupplyChainPage: React.FC<{ articles: Array<string> }> = ({
-  articles,
-}) => {
+const SupplyChainPage: React.FC<Props> = ({ articles }) => {
   const background = 'bg-gray-100';
   const queryTerm = 'Artigos';
   const linkTerm = '/';
