@@ -4,21 +4,43 @@ import { Layout } from '@/components/Layout';
 import { API_URL } from '@/config/index';
 import ArticleItem from '@/components/articles/article-item/ArticleItem';
 
-interface ArticlesAPIResponse {
+interface Article {
   id: string;
   title: string;
   category: string;
-  cover: URL;
+  image: {
+    formats: {
+      thumbnail: {
+        url: string;
+      };
+      large: {
+        url: string;
+      };
+    };
+  };
   content: string;
   date: string;
-  slug: string;
   description: string;
+  slug: string;
+  owner: string;
+  published_at: string;
+  created_at: string;
+  updated_at: string;
+}
+
+interface Props {
+  page: number;
+  total: number;
+  articles: Array<Article>;
 }
 
 type queryTerm = { queryTerm: string };
-type term = string;
 
-export const getServerSideProps = async ({ query: { term } }) => {
+export const getServerSideProps = async ({
+  query: { term },
+}: {
+  query: { term: string };
+}) => {
   const query = qs.stringify({
     _where: {
       _or: [
@@ -39,9 +61,7 @@ export const getServerSideProps = async ({ query: { term } }) => {
   };
 };
 
-const ArticleSearchPage: React.FC<{
-  articles: Array<string>;
-}> = ({ articles }) => {
+const ArticleSearchPage: React.FC<Props> = ({ articles }) => {
   const router = useRouter();
   const queryTerm = `PROCURAR RESULTADOS: ${router.query.term}`;
   const linkTerm = '/articles/';
