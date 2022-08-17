@@ -10,6 +10,7 @@ interface DatapointInterface {
 
 interface Props {
   props: {
+    title: string;
     datapoints: Array<DatapointInterface>;
   };
 }

@@ -9,9 +9,16 @@ import {
   IconHolder,
 } from './Styles';
 
+interface DatapointInterface {
+  id: string;
+  url: string;
+  name: string;
+}
+
 interface Props {
   props: {
     title: string;
+    datapoints: Array<DatapointInterface>;
   };
 }
 
