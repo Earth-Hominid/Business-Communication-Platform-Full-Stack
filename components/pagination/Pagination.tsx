@@ -12,7 +12,7 @@ import {
   ArrowCircleRightIcon,
 } from '@heroicons/react/outline';
 
-const Pagination = ({ page, lastPage }) => {
+const Pagination = ({ page, lastPage }: { page: number; lastPage: number }) => {
   return (
     <PaginationContainer>
       <InsideContainer>

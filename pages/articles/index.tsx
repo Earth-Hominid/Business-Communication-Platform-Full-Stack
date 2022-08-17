@@ -4,21 +4,41 @@ import { API_URL } from '@/config/index';
 import Pagination from '@/components/pagination/Pagination';
 import { PER_PAGE } from '@/config/index';
 
-type articles = {
+interface Article {
   id: string;
   title: string;
+  category: string;
+  image: {
+    formats: {
+      thumbnail: {
+        url: string;
+      };
+      large: {
+        url: string;
+      };
+    };
+  };
   content: string;
+  date: string;
   description: string;
   slug: string;
   owner: string;
-  category: string;
   published_at: string;
   created_at: string;
   updated_at: string;
-  image: string;
-};
+}
 
-export const getServerSideProps = async ({ query: { page = 1 } }) => {
+interface Props {
+  page: number;
+  total: number;
+  articles: Array<Article>;
+}
+
+export const getServerSideProps = async ({
+  query: { page = 1 },
+}: {
+  query: { page: number };
+}) => {
   const start = +page === 1 ? 0 : (+page - 1) * PER_PAGE;
   // Fetch total/count
   const countResponse = await fetch(`${API_URL}/articles/count`);
@@ -36,14 +56,8 @@ export const getServerSideProps = async ({ query: { page = 1 } }) => {
   };
 };
 
-const ArticlePage: React.FC<{ articles: Array<string> }> = ({
-  articles,
-  page,
-  total,
-}) => {
+const ArticlePage: React.FC<Props> = ({ articles, page, total }) => {
   const background = 'bg-gray-100';
-  const queryTerm = 'Artigos';
-  const linkTerm = '/';
 
   // Calculate last page
   const lastPage = Math.ceil(total / PER_PAGE);
@@ -65,7 +79,7 @@ const ArticlePage: React.FC<{ articles: Array<string> }> = ({
         width="max-w-5xl"
       >
         <section className="min-h-screen">
-          <Pagination page={page} total={total} lastPage={lastPage} />
+          <Pagination page={page} lastPage={lastPage} />
           {articles.length === 0 && <h3>Nenhum artigo disponível</h3>}
 
           {articles.map((article) => (

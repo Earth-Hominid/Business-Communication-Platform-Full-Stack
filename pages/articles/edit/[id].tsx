@@ -1,5 +1,4 @@
-import { GetServerSideProps } from 'next';
-import type { NextApiRequest, NextApiResponse } from 'next';
+import type { NextApiRequest } from 'next';
 import { Layout } from '@/components/Layout';
 import { parseCookies } from '@/helpers/index';
 import { API_URL } from 'config/index';
