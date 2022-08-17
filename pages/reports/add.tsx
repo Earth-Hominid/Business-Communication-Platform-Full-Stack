@@ -80,7 +80,6 @@ export default function AddReportPage({ token }: { token: string }) {
         width="w-full"
       >
         <AddReportTemplate
-          token={token}
           handleSubmit={handleSubmit}
           handleInputChange={handleInputChange}
           dataForm={dataForm}

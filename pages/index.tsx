@@ -6,7 +6,40 @@ import Homepage from '@/components/homepage/Homepage';
 import { API_URL } from '@/config/index';
 import ArticleItem from '@/components/articles/article-item/ArticleItem';
 
-const HomePage: NextPage = ({ articles }) => {
+interface ArticleInterface {
+  id: string;
+  title: string;
+  category: string;
+  image: {
+    formats: {
+      thumbnail: {
+        url: string;
+      };
+      large: {
+        url: string;
+      };
+      medium: {
+        url: string;
+      };
+    };
+  };
+  content: string;
+  date: string;
+  description: string;
+  slug: string;
+  owner: string;
+  published_at: string;
+  created_at: string;
+  updated_at: string;
+}
+
+interface Props {
+  page: number;
+  total: number;
+  articles: Array<ArticleInterface>;
+}
+
+const HomePage: NextPage<Props> = ({ articles }) => {
   return (
     <>
       <Head>
