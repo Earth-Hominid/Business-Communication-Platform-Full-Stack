@@ -17,6 +17,9 @@ interface Report {
       large: {
         url: string;
       };
+      medium: {
+        url: string;
+      };
     };
   };
   content: string;
