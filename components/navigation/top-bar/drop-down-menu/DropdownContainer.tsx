@@ -36,7 +36,7 @@ const DropdownContainer = () => {
 
   const toggle = (e: MouseEvent) => {
     const { current } = dropdownRef;
-    if (current && !current.contains(e.target)) {
+    if (current && !current.contains(e.target as Node)) {
       setOpenMenu(false);
     }
   };
