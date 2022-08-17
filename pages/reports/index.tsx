@@ -5,18 +5,34 @@ import ReportItem from '@/components/reports/report-item/ReportItem';
 import { NextApiRequest } from 'next';
 const PER_PAGE = 5;
 
-interface ReportInterface {
+interface Report {
   id: string;
   title: string;
+  category: string;
+  image: {
+    formats: {
+      thumbnail: {
+        url: string;
+      };
+      large: {
+        url: string;
+      };
+    };
+  };
   content: string;
+  date: string;
   description: string;
   slug: string;
   owner: string;
-  category: string;
   published_at: string;
   created_at: string;
   updated_at: string;
-  image: string;
+}
+
+interface Props {
+  page: number;
+  total: number;
+  reports: Array<Report>;
 }
 
 export const getServerSideProps = async ({ req }: { req: NextApiRequest }) => {
@@ -37,7 +53,7 @@ export const getServerSideProps = async ({ req }: { req: NextApiRequest }) => {
   };
 };
 
-const ReportPage: React.FC<{ reports: Array<string> }> = ({ reports }) => {
+const ReportPage: React.FC<Props> = ({ reports }) => {
   const background = 'bg-gray-50';
   const queryTerm = 'Relatórios';
   const linkTerm = '/';

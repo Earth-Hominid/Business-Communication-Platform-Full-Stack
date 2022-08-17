@@ -4,22 +4,40 @@ import { API_URL } from 'config/index';
 import EditReportTemplate from '@/components/reports/edit-report/EditReportTemplate';
 import { NextApiRequest } from 'next';
 
-interface ReportInterface {
-  id: string;
-  title: string;
-  category: string;
-  image: object;
-  content: string;
-  date: string;
-  description: string;
-  slug: string;
-  owner: string;
-  published_at: string;
-  created_at: string;
-  updated_at: string;
+interface Props {
+  token: string;
+  report: {
+    id: string;
+    title: string;
+    category: string;
+    image: {
+      formats: {
+        thumbnail: {
+          url: string;
+        };
+        large: {
+          url: string;
+        };
+      };
+    };
+    content: string;
+    date: string;
+    description: string;
+    slug: string;
+    owner: string;
+    published_at: string;
+    created_at: string;
+    updated_at: string;
+  };
 }
 
-export const getServerSideProps = async ({ params: { id }, req }) => {
+export const getServerSideProps = async ({
+  params: { id },
+  req,
+}: {
+  params: { id: string };
+  req: NextApiRequest;
+}) => {
   const { token } = parseCookies(req);
 
   const res = await fetch(`${API_URL}/reports/${id}`);
@@ -33,13 +51,7 @@ export const getServerSideProps = async ({ params: { id }, req }) => {
   };
 };
 
-const EditReportPage = ({
-  report,
-  token,
-}: {
-  report: ReportInterface;
-  token: string;
-}) => {
+const EditReportPage: React.FC<Props> = ({ report, token }) => {
   return (
     <>
       <Layout

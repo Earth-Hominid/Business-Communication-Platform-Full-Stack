@@ -6,25 +6,38 @@ import { parseCookies } from '@/helpers/index';
 import 'react-toastify/dist/ReactToastify.css';
 import { NextApiRequest } from 'next';
 
-interface ReportInterface {
-  id: string;
-  title: string;
-  category: string;
-  image: URL;
-  content: string;
-  date: string;
-  description: string;
-  slug: string;
-  owner: string;
-  published_at: string;
-  created_at: string;
-  updated_at: string;
+interface Props {
+  token: string;
+  report: {
+    id: string;
+    title: string;
+    category: string;
+    image: {
+      formats: {
+        thumbnail: {
+          url: string;
+        };
+        large: {
+          url: string;
+        };
+      };
+    };
+    content: string;
+    date: string;
+    description: string;
+    slug: string;
+    owner: string;
+    published_at: string;
+    created_at: string;
+    updated_at: string;
+  };
 }
 
 export const getServerSideProps = async ({
   req,
   query: { slug },
 }: {
+  query: { slug: string };
   req: NextApiRequest;
 }) => {
   const { token } = parseCookies(req);
@@ -49,7 +62,7 @@ export const getServerSideProps = async ({
   };
 };
 
-const ReportPage: React.FC<{ report: ReportInterface }> = ({ report }) => {
+const ReportPage: React.FC<Props> = ({ report }) => {
   if (!report) return <div>Loading...</div>;
 
   return (

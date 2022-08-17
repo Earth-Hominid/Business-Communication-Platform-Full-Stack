@@ -2,14 +2,27 @@ import { useState } from 'react';
 import { API_URL } from '@/config/index';
 import { FileInput, FormContainer, SubmitInput } from './Styles';
 
-const ReportImageUpload = ({ reportId, imageUploaded, token }) => {
-  const [image, setImage] = useState(null);
+// types
+type image = File;
 
-  const handleFileChange = (e) => {
+interface Props {
+  token: string;
+  reportId: string;
+  imageUploaded: Function;
+}
+
+const ReportImageUpload: React.FC<Props> = ({
+  reportId,
+  imageUploaded,
+  token,
+}) => {
+  const [image, setImage] = useState({} as image);
+
+  const handleFileChange = (e: any) => {
     setImage(e.target.files[0]);
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     const formData = new FormData();
     formData.append(`files`, image);

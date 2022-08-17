@@ -8,19 +8,32 @@ import { PhotographIcon } from '@heroicons/react/outline';
 import ReportImageUpload from '@/components/reports/report-image/ReportImageUpload';
 import Modal from '@/components/modal/Modal';
 
-interface ReportInterface {
-  id: string;
-  title: string;
-  category: string;
-  image: Array<string>;
-  content: string;
-  date: string;
-  description: string;
-  slug: string;
-  owner: string;
-  published_at: string;
-  created_at: string;
-  updated_at: string;
+interface Props {
+  token: string;
+  imageId: string;
+  report: {
+    id: string;
+    title: string;
+    category: string;
+    image: {
+      formats: {
+        thumbnail: {
+          url: string;
+        };
+        large: {
+          url: string;
+        };
+      };
+    };
+    content: string;
+    date: string;
+    description: string;
+    slug: string;
+    owner: string;
+    published_at: string;
+    created_at: string;
+    updated_at: string;
+  };
 }
 
 import {
@@ -40,13 +53,7 @@ import {
   ButtonHolder,
 } from './Styles';
 
-const EditReportTemplate = ({
-  report,
-  token,
-}: {
-  report: ReportInterface;
-  token: string;
-}) => {
+const EditReportTemplate: React.FC<Props> = ({ report, token }) => {
   const [dataForm, setDataForm] = useState({
     title: report.title,
     category: report.category,
@@ -222,7 +229,6 @@ const EditReportTemplate = ({
           <ReportImageUpload
             reportId={report.id}
             imageUploaded={imageUploaded}
-            imageId={imageId}
             token={token}
           />
         </Modal>
