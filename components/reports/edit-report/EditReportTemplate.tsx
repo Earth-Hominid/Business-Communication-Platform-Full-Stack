@@ -111,7 +111,7 @@ const EditReportTemplate: React.FC<Props> = ({ report, token }) => {
     setDataForm({ ...dataForm, [name]: value });
   };
 
-  const imageUploaded = async (e) => {
+  const imageUploaded = async (e: any) => {
     const res = await fetch(`${API_URL}/reports/${report.id}`, {
       headers: {
         'Content-Type': 'application/json',
