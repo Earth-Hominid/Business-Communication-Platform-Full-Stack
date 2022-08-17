@@ -3,22 +3,37 @@ import qs from 'qs';
 import ArticleItem from '@/components/articles/article-item/ArticleItem';
 import { API_URL, PER_PAGE } from '@/config/index';
 
-type articles = {
+interface Article {
   id: string;
   title: string;
+  category: string;
+  image: {
+    formats: {
+      thumbnail: {
+        url: string;
+      };
+      large: {
+        url: string;
+      };
+    };
+  };
   content: string;
+  date: string;
   description: string;
   slug: string;
   owner: string;
-  category: string;
   published_at: string;
   created_at: string;
   updated_at: string;
-  image: string;
-};
+}
+
+interface Props {
+  page: number;
+  total: number;
+  articles: Array<Article>;
+}
 
 type queryTerm = { queryTerm: string };
-type term = string;
 
 export const getServerSideProps = async ({ query: { page = 1 } }) => {
   // Fetch all articles
@@ -40,12 +55,8 @@ export const getServerSideProps = async ({ query: { page = 1 } }) => {
   };
 };
 
-const HortifrutiPage: React.FC<{ articles: Array<string> }> = ({
-  articles,
-}) => {
+const HortifrutiPage: React.FC<Props> = ({ articles }) => {
   const background = 'bg-white';
-  const queryTerm = 'Artigos';
-  const linkTerm = '/';
 
   if (!articles) return <div>Loading...</div>;
 
