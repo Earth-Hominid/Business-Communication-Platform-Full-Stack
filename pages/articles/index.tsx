@@ -16,6 +16,9 @@ interface ArticleInterface {
       large: {
         url: string;
       };
+      medium: {
+        url: string;
+      };
     };
   };
   content: string;
