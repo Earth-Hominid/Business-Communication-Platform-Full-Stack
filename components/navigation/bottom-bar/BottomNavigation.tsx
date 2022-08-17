@@ -1,12 +1,10 @@
-import { useState, useContext } from 'react';
+import { useContext } from 'react';
 import { useRouter } from 'next/router';
 import AuthContext from '@/context/AuthContext';
 import Link from 'next/link';
 import SearchBar from '../searchbar/Searchbar';
 import MenuAccordian from './accordian/MenuAccordian';
 import {
-  SunIcon,
-  MoonIcon,
   DocumentAddIcon,
   DocumentReportIcon,
   DesktopComputerIcon,
@@ -16,7 +14,6 @@ import {
 import {
   BottomNavigationMenu,
   ActionButtonHolder,
-  ThemeButton,
   IconWrap,
   NavigationMenu,
   LogoutButtonLink,
@@ -28,8 +25,6 @@ import {
 } from './Styles';
 
 const BottomNavigation = () => {
-  const [lightTheme, setLightTheme] = useState(true);
-
   const router = useRouter();
 
   const handleLoginClick = () => {
@@ -38,18 +33,6 @@ const BottomNavigation = () => {
 
   const handleSignupClick = () => {
     router.push('/account/register');
-  };
-
-  const handleLightThemeToggle = () => {
-    if (lightTheme) {
-      setLightTheme(false);
-    } else {
-      setLightTheme(true);
-    }
-  };
-
-  const handleThemeButtonClick = () => {
-    handleLightThemeToggle();
   };
 
   const BusinessObject = {
@@ -92,17 +75,6 @@ const BottomNavigation = () => {
         <SearchBar />
       </ActionButtonHolder>
       <ActionButtonHolder>
-        {/* <ThemeButton>
-          <IconWrap>
-            <SunIcon />
-          </IconWrap>
-          Theme
-        </ThemeButton> */}
-        {/* {session ? (
-          <>
-            <ButtonLink>Demo Account</ButtonLink>
-          </>
-        )} */}
         {user ? (
           <>
             <Link href="/articles/add">

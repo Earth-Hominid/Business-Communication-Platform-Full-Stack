@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import AccordianContent from './AccordianContent';
 import { ChevronDownIcon, ChevronRightIcon } from '@heroicons/react/solid';
 import {
@@ -9,7 +9,13 @@ import {
   IconHolder,
 } from './Styles';
 
-const MenuAccordian = ({ props }) => {
+interface Props {
+  props: {
+    title: string;
+  };
+}
+
+const MenuAccordian: React.FC<Props> = ({ props }) => {
   const [accordianOpen, setAccordianOpen] = useState(false);
 
   const handleAccordianClick = () => {

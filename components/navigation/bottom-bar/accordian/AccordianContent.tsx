@@ -2,7 +2,19 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { AccordianContentContainer, AccordianText } from './Styles';
 
-const AccordianContent = ({ props }) => {
+interface DatapointInterface {
+  id: string;
+  url: string;
+  name: string;
+}
+
+interface Props {
+  props: {
+    datapoints: Array<DatapointInterface>;
+  };
+}
+
+const AccordianContent: React.FC<Props> = ({ props }) => {
   return (
     <AccordianContentContainer>
       {props.datapoints.map((datapoint) => (
