@@ -8,8 +8,16 @@ import {
 } from './Styles';
 
 import { ChevronDoubleRightIcon } from '@heroicons/react/outline';
+import React from 'react';
 
-const ToolBar = ({
+interface Props {
+  mainPage: string;
+  currentPage: string;
+  mainPageTitle: string;
+  currentPageTitle: string;
+}
+
+const ToolBar: React.FC<Props> = ({
   mainPage,
   currentPage,
   mainPageTitle,
