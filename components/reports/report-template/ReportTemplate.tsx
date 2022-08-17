@@ -15,21 +15,31 @@ import {
   InformationContainer,
 } from './Styles';
 
-type report = {
+interface ReportInterface {
   id: string;
   title: string;
+  category: string;
+  image: {
+    formats: {
+      large: {
+        url: string;
+      };
+    };
+  };
   content: string;
+  date: string;
   description: string;
   slug: string;
   owner: string;
-  category: string;
   published_at: string;
   created_at: string;
   updated_at: string;
-};
+}
 
-const ReportTemplate: React.FC<{ reportData: report }> = ({ reportData }) => {
-  const loaderProp = ({ src }) => {
+const ReportTemplate: React.FC<{ reportData: ReportInterface }> = ({
+  reportData,
+}) => {
+  const loaderProp = ({ src }: { src: any }) => {
     return src;
   };
 
