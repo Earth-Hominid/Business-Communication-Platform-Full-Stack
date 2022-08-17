@@ -26,7 +26,10 @@ const Header: React.FC<Props> = ({
     }
   };
 
-  const handleNavigationMenuClick = () => {
+  const handleNavigationMenuClick = (
+    event: React.MouseEvent<HTMLButtonElement>
+  ) => {
+    event.preventDefault();
     toggleNavigationButton();
   };
 

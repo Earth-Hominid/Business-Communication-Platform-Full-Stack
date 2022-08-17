@@ -118,36 +118,6 @@ export const ButtonLink = tw.button`
   ease-in-out
 `;
 
-export const OrangeIconWrap = tw.div`
-  h-9 
-  w-6 
-  md:w-9 
-  cursor-pointer 
-  md:p-1 
-  md:hover:bg-orange-100
-  md:hover:text-orange-600
-  rounded-3xl
-  text-stone-600
-  duration-150
-  transition
-  ease-in-out
-`;
-
-export const CyanIconWrap = tw.div`
-  h-9 
-  w-6 
-  md:w-9 
-  cursor-pointer 
-  md:p-1 
-  md:hover:bg-cyan-100
-  md:hover:text-cyan-700
-  rounded-3xl 
-  text-slate-500
-  duration-150
-  transition
-  ease-in-out
-`;
-
 export const BlueIconWrap = tw.div`
   h-9 
   w-6 
@@ -188,20 +158,6 @@ export const IndigoIconWrap = tw.div`
   md:hover:text-indigo-600
   rounded-3xl 
   text-slate-500
-  duration-150
-  transition
-  ease-in-out
-`;
-export const GreenIconWrap = tw.div`
-  h-9 
-  w-6 
-  md:w-9 
-  cursor-pointer 
-  md:p-1 
-  md:hover:bg-green-100
-  md:hover:text-green-600
-  rounded-3xl 
-  text-stone-600
   duration-150
   transition
   ease-in-out

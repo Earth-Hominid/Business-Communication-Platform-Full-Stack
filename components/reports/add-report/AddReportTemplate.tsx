@@ -1,6 +1,17 @@
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+interface Props {
+  dataForm: {
+    title: string;
+    category: string;
+    description: string;
+    content: string;
+  };
+  handleInputChange: Function;
+  handleSubmit: Function;
+}
+
 import {
   FormPageTitle,
   FormContainer,
@@ -12,8 +23,7 @@ import {
   WideTextArea,
 } from './Styles';
 
-const AddReportTemplate = ({
-  token,
+const AddReportTemplate: React.FC<Props> = ({
   handleInputChange,
   handleSubmit,
   dataForm,

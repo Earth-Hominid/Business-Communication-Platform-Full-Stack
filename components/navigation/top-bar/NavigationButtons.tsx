@@ -76,11 +76,11 @@ const NavigationButtons = ({
             </>
           )}
         </ButtonContainer>
-        <HamburgerContainer>
+        <HamburgerContainer onClick={handleNavigationMenuClick}>
           {navigationMenuToggle ? (
-            <XIcon className="icon" onClick={handleNavigationMenuClick} />
+            <XIcon className="icon" />
           ) : (
-            <MenuIcon className="icon" onClick={handleNavigationMenuClick} />
+            <MenuIcon className="icon" />
           )}
         </HamburgerContainer>
       </ExtendedContainer>
