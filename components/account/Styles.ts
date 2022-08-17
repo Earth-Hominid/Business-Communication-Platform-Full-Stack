@@ -34,7 +34,6 @@ export const HeaderContainer = tw.div`
   text-slate-500
   uppercase
 `;
-
 export const StyledInput = tw.input`
   my-3
   block 
@@ -60,7 +59,6 @@ export const StyledInput = tw.input`
   focus:invalid:border-pink-500 
   focus:invalid:ring-pink-500
 `;
-
 export const StyledButtonContainer = tw.div`
   flex
   flex-col
@@ -68,7 +66,6 @@ export const StyledButtonContainer = tw.div`
   w-full
   mt-8
 `;
-
 export const StyledButton = tw.button`
   flex
   flex-row
@@ -91,7 +88,6 @@ export const StyledButton = tw.button`
   hover:border-sky-500
   mb-20
 `;
-
 export const FormFooter = tw.div`
   flex 
   flex-row 
@@ -99,7 +95,6 @@ export const FormFooter = tw.div`
   font-montserrat
   text-slate-500
 `;
-
 export const StyledLink = tw.a`
 cursor-pointer
 text-blue-500
@@ -110,7 +105,6 @@ transition
 ease-in-out
 hover:text-sky-500
 `;
-
 export const SmallHeaderContainer = tw.div`
   font-montserrat
   md:text-sm
