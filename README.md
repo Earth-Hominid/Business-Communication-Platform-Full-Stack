@@ -27,10 +27,14 @@ NextJS allows the JSON Webtoken to be stored server side, which is a great featu
 
 Visitors to the website can only access public articles. Once a user is authenticated, they will be granted access to reports published by other authenticated users. They have access to their own personal dashboard where they can create and edit articles and reports. Articles will be published publicly, whereas reports are published privately. 
 
-#### Public User View <img width="363" alt="Screen Shot 2022-08-18 at 9 26 35 AM" src="https://user-images.githubusercontent.com/66766688/185410555-8050720d-17b3-49d8-aaff-543c676a6ef9.png">
+#### Public User View 
+
+<img width="363" alt="Screen Shot 2022-08-18 at 9 26 35 AM" src="https://user-images.githubusercontent.com/66766688/185410555-8050720d-17b3-49d8-aaff-543c676a6ef9.png">
 
 
-#### Private User View <img width="444" alt="Screen Shot 2022-08-18 at 9 27 30 AM" src="https://user-images.githubusercontent.com/66766688/185410592-5498ce0c-9328-4316-a041-2249bb24ced2.png">
+#### Private User View 
+
+<img width="444" alt="Screen Shot 2022-08-18 at 9 27 30 AM" src="https://user-images.githubusercontent.com/66766688/185410592-5498ce0c-9328-4316-a041-2249bb24ced2.png">
 
 
 ### Backend
