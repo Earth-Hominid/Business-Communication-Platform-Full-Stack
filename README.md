@@ -21,6 +21,8 @@ The application was built with authentication in order to  provide several level
 
 The front-end is written in TypeScript and built with the NextJS framework and React functional components.
 
+Tailwind CCS was combined with Styled-Components. Every React functional component has its own separate styled-component tailwind file. This allows extremely fast ui changes without compromising code quality.
+
 ### Authentication
 
 NextJS allows the JSON Webtoken to be stored server side, which is a great feature and negates the typical security risks when the Webtoken is stored client side.
