@@ -19,7 +19,7 @@ The application was built with authentication in order to  provide several level
 
 The front-end is written in TypeScript and built with the NextJS framework.
 
-NextJS allows the JSON Webtoken to be stored server side, which is a great feature and negates the typical sercurity risks when the Webtoken is stored client side.
+NextJS allows the JSON Webtoken to be stored server side, which is a great feature and negates the typical security risks when the Webtoken is stored client side.
 
 ### Backend
 
