@@ -23,6 +23,8 @@ The front-end is written in TypeScript and built with the NextJS framework and R
 
 Tailwind CCS was combined with Styled-Components. Every React functional component has its own separate styled-component tailwind file. This allows extremely fast ui changes without compromising code quality.
 
+The Tailwind CSS was chosen due to its ease of use and its effectiveness in providing a mobile first design that can be easily adjusted for wide screen monitors. 
+
 ### Authentication
 
 NextJS allows the JSON Webtoken to be stored server side, which is a great feature and negates the typical security risks when the Webtoken is stored client side.
