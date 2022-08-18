@@ -13,17 +13,25 @@ The repository for the back-end can be found [here](https://github.com/Earth-Hom
 
 ## Description
 
-This fullstack application is demo of an application that was built to allow small businesses to create educational material, reports and to share sensitive information among the mangement team.
+This full-stack application is demo of an application that was built to allow small businesses to create educational material, reports and to share sensitive information among the mangement team.
 
 The application was built with authentication in order to  provide several levels of authorization layers for users. 
 
 ### Frontend
 
-The front-end is written in TypeScript and built with the NextJS framework.
+The front-end is written in TypeScript and built with the NextJS framework and React functional components.
+
+### Authentication
 
 NextJS allows the JSON Webtoken to be stored server side, which is a great feature and negates the typical security risks when the Webtoken is stored client side.
 
-### Authentication
+Visitors to the website can only access public articles. Once a user is authenticated, they will be granted access to reports published by other authenticated users. They have access to their own personal dashboard where they can create and edit articles and reports. Articles will be published publicly, whereas reports are published privately. 
+
+#### Public User View <img width="363" alt="Screen Shot 2022-08-18 at 9 26 35 AM" src="https://user-images.githubusercontent.com/66766688/185410555-8050720d-17b3-49d8-aaff-543c676a6ef9.png">
+
+
+#### Private User View <img width="444" alt="Screen Shot 2022-08-18 at 9 27 30 AM" src="https://user-images.githubusercontent.com/66766688/185410592-5498ce0c-9328-4316-a041-2249bb24ced2.png">
+
 
 ### Backend
 
