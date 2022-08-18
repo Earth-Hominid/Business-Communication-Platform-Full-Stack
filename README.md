@@ -8,7 +8,7 @@ The goal of this application is to provide businesses with an easy to use web ap
 
 This fullstack application is demo of an application that was built to allow small businesses to create educational material, reports and to share sensitive information among the mangement team.
 
-The application contains an authenticaition which provides several levels of authorization layers for users. 
+The application was built with authentication in order to  provide several levels of authorization layers for users. 
 
 ### Frontend
 
