@@ -5,6 +5,10 @@
 
 The goal of this application is to provide businesses with an easy to use web application where management can provide business reports for executives and online training material for their employees.
 
+Click here for the [live demo](https://rbsdocsfrontend.vercel.app). (The application will take a few seconds to start from sleep, as the back end is hosted on the free heroku plan.)
+
+The repository for the back-end can be found [here](https://github.com/Earth-Hominid/docs-backend).
+
 ## Description
 
 This fullstack application is demo of an application that was built to allow small businesses to create educational material, reports and to share sensitive information among the mangement team.
