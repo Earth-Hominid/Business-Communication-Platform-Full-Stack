@@ -25,6 +25,8 @@ Tailwind CCS was combined with Styled-Components. Every React functional compone
 
 The Tailwind CSS was chosen due to its ease of use and its effectiveness in providing a mobile first design that can be easily adjusted for wide screen monitors. 
 
+Images can be uploaded using either the front end or back end CMS. The images are stored in Cloudinary, which provides several sizes of the same image, including thumbnails.  
+
 ### Authentication
 
 NextJS allows the JSON Webtoken to be stored server side, which is a great feature and negates the typical security risks when the Webtoken is stored client side.
