@@ -15,7 +15,7 @@ The repository for the back-end can be found [here](https://github.com/Earth-Hom
 
 This full-stack application is demo of an application that was built to allow small businesses to create educational material, reports and to share sensitive information among the mangement team.
 
-The application was built with authentication in order to  provide several levels of authorization layers for users. 
+The application was built with authentication in order to  provide several authorization layers for users. 
 
 ### Frontend
 
