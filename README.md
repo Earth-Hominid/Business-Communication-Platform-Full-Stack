@@ -25,7 +25,7 @@ Tailwind CCS was combined with Styled-Components. Every React functional compone
 
 Authenticated users can be upload, store, and manage images using either the front end or back end CMS. The SAAS product, Cloudinary, is utilized to provide this functionality.
 
-Pagination was implemented using specific Strapi fetches.  
+Pagination and search functionality was implemented using Strapi's API and filtering fetches.  
 
 ### Authentication
 
