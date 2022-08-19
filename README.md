@@ -21,11 +21,11 @@ The application was built with authentication in order to  provide several level
 
 The front-end is written in TypeScript and built with the NextJS framework and React functional components.
 
-Tailwind CCS was combined with Styled-Components. Every React functional component has its own separate styled-component tailwind file. This allows extremely fast ui changes without compromising code quality.
-
-The Tailwind CSS was chosen due to its ease of use and its effectiveness in providing a mobile first design that can be easily adjusted for wide screen monitors. 
+Tailwind CCS was combined with Styled-Components. Every React functional component has its own separate styled-component tailwind file. This allows extremely fast ui changes without compromising code quality. Tailwind was chosen due to its ease of use and its effectiveness in providing a mobile first design that can be easily adjusted for wide screen monitors. 
 
 Authenticated users can be upload, store, and manage images using either the front end or back end CMS. The SAAS product, Cloudinary, is utilized to provide this functionality.
+
+Pagination was implemented using specific Strapi fetches.  
 
 ### Authentication
 
