@@ -35,26 +35,23 @@ Visitors to the website can only access public articles. Once a user is authenti
 
 <img width="444" alt="Screen Shot 2022-08-18 at 9 27 30 AM" src="https://user-images.githubusercontent.com/66766688/185410592-5498ce0c-9328-4316-a041-2249bb24ced2.png">
 
-
 ## Frontend
 
 The front-end is written in TypeScript and built with the NextJS framework and React functional components.
 
 Tailwind CCS was combined with Styled-Components. Every React functional component has its own separate styled-component tailwind file. This allows extremely fast ui changes without compromising code quality. Tailwind was chosen due to its ease of use and its effectiveness in providing a mobile first design that can be easily adjusted for wide screen monitors. 
 
-Authenticated users can upload, store, and manage images using either the front end or back end CMS. The SAAS product, Cloudinary, is utilized to provide this functionality.
+React-Toastify is used to display form validation errors. 
 
-Pagination and search functionality was implemented using Strapi's API and filtering fetches.  
+In order to display Markdown (markdown content is provided by users using the rich-text editor), Tailwind typography and React Markdown were implemented. 
 
 ## Backend
 
-The backend is written in JavaScript and built with the Strapi framework. 
+The backend is written in JavaScript and built with the open-source Strapi framework. 
 
-Images are hosted on Cloudinary. Cloudinary creates multiple images which improves SEO as the application can display smaller or larger images based on the requirement. Futhermore, the back end is hosted on Heroku which does not have local file storage, thus, Cloudinary is used for storage.
+The SAAS product Cloudinary was chosen to host image files. When an image file is uploaded to Cloudinary, it creates multiple image sizes which help to improve SEO. The back end is hosted on Heroku which does not provide local file storage, thus, Cloudinary is used for storage.
 
-SQLite was used for the development database. 
-
-PostgreSQL was chosen for the production database. 
+SQLite was used for the development database and PostgreSQL was chosen for the production database. 
 
 <img width="964" alt="Screen Shot 2022-08-20 at 10 35 22 AM" src="https://user-images.githubusercontent.com/66766688/185748651-d121bb06-9af0-4440-8cf3-79462d69900f.png">
 
