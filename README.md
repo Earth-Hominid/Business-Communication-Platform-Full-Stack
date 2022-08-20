@@ -50,6 +50,8 @@ Pagination and search functionality was implemented using Strapi's API and filte
 
 The backend is written in JavaScript and built with the Strapi framework. Images are hosted on Cloudinary. Cloudinary creates multiple images which improves SEO as the application can display smaller or larger images based on the requirement. Futhermore, the back end is hosted on Heroku which does not have local file storage, thus, Cloudinary is used for storage.
 
+<img width="964" alt="Screen Shot 2022-08-20 at 10 35 22 AM" src="https://user-images.githubusercontent.com/66766688/185748651-d121bb06-9af0-4440-8cf3-79462d69900f.png">
+
 ### Dependencies
 - [Next.js](https://nextjs.org/)
 - [React](https://reactjs.org/)
