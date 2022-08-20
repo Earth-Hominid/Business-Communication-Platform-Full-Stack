@@ -49,15 +49,19 @@ Pagination and search functionality was implemented using Strapi's API and filte
 The backend is written in JavaScript and built with the Strapi framework.
 
 ### Dependencies
-
 - [Next.js](https://nextjs.org/)
 - [React](https://reactjs.org/)
+- [Strapi](https://strapi.io/)
 - [Tailwind](https://tailwindcss.com/)
+- [Tailwind Typography](https://tailwindcss.com/docs/typography-plugin)
 - [HeroIcons](https://heroicons.com/)
 - [Tailwind-Styled-Components](https://github.com/MathiasGilson/Tailwind-Styled-Component)
-- [Typescript](https://www.typescriptlang.org/)
-- [Node](https://nodejs.org/en/)
+- [React-Toastify](https://fkhadra.github.io/react-toastify/introduction)
 - [Eslint](https://eslint.org/)
 - [PostCSS](https://postcss.org/)
 - [React Markdown](https://github.com/remarkjs/react-markdown)
+- [Query String - qs](https://www.npmjs.com/package/qs)
 - [Cloudinary](https://cloudinary.com/)
+- [Node](https://nodejs.org/en/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Cookie](https://www.npmjs.com/package/cookie)
