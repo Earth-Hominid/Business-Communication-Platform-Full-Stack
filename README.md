@@ -28,7 +28,9 @@ Pagination and search functionality was implemented using Strapi's API and filte
 
 ### Authentication
 
-NextJS allows the JSON Webtoken to be stored server side, which is a great feature and negates the typical security risks when the Webtoken is stored client side.
+NextJS allows the JSON Webtoken to be stored server side, which is a great feature and negates the typical security risks (such as cross site scripting attacks) when the Webtoken is stored client side.
+
+Strapi is a community built, open source CMS. Routes can be created within it, that once hit can save the JSON web token in a server side cookie. We utilize this functionality to allow authenticated users to access route protected end points. 
 
 Visitors to the website can only access public articles. Once a user is authenticated, they will be granted access to reports published by other authenticated users. They have access to their own personal dashboard where they can create and edit articles and reports. Articles will be published publicly, whereas reports are published privately. 
 
