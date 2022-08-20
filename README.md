@@ -12,9 +12,11 @@ The repository for the back-end can be found [here](https://github.com/Earth-Hom
 
 ## Description
 
-This full-stack application is demo of an application that was built to allow small businesses to create educational material, reports and to share sensitive information among the mangement team.
+This full-stack NextJS application is a demo of an application that was built to allow small businesses to create educational material, reports and to share sensitive information among the mangement team.
 
-The application was built with authentication in order to  provide several authorization layers for users. 
+Strapi, an open-source headless Content Management System, was chosen for the back end. Image files are hosted on Cloudinary. 
+
+The administration panel, users and user content is handled within the Strapi back-end. Authenticated users can also post content and upload data and files on the front-end. The application contains authentication, pagination and search functionality. 
 
 ## Authentication
 
