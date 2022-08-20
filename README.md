@@ -16,7 +16,7 @@ This full-stack application is demo of an application that was built to allow sm
 
 The application was built with authentication in order to  provide several authorization layers for users. 
 
-### Authentication
+## Authentication
 
 NextJS allows the JSON Webtoken to be stored server side, which is a great feature and negates the typical security risks (such as cross site scripting attacks) when the Webtoken is stored client side.
 
