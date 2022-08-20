@@ -20,7 +20,7 @@ The application was built with authentication in order to  provide several autho
 
 NextJS allows the JSON Webtoken to be stored server side, which is a great feature and negates the typical security risks (such as cross site scripting attacks) when the Webtoken is stored client side.
 
-Strapi is a community built, open source CMS. In order to avoid sending authentication requests from our front end client to the backend, Strapi allows for routes to built within it. These API routes run serverside. Once accessed these routes send the request to Strapi and save the JSON Web token in an HTTP only cookie. Thus, the JSON Web Token can never be accessed on the client / browser side by JavaScript. 
+Strapi is a community built, open source headless Content Management System. In order to avoid sending authentication requests from our front end client to the backend, Strapi allows for routes to built within it. These API routes run serverside. Once accessed these routes send the request to Strapi and save the JSON Web token in an HTTP only cookie. Thus, the JSON Web Token can never be accessed on the client / browser side by JavaScript. 
 
 Visitors to the website can only access public articles. Once a user is authenticated, they will be granted access to reports published by other authenticated users. They have access to their own personal dashboard where they can create and edit articles and reports. Articles will be published publicly, whereas reports are published privately. 
 
