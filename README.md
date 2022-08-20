@@ -16,7 +16,7 @@ This full-stack application is demo of an application that was built to allow sm
 
 The application was built with authentication in order to  provide several authorization layers for users. 
 
-### Frontend
+## Frontend
 
 The front-end is written in TypeScript and built with the NextJS framework and React functional components.
 
@@ -42,7 +42,7 @@ Visitors to the website can only access public articles. Once a user is authenti
 <img width="444" alt="Screen Shot 2022-08-18 at 9 27 30 AM" src="https://user-images.githubusercontent.com/66766688/185410592-5498ce0c-9328-4316-a041-2249bb24ced2.png">
 
 
-### Backend
+## Backend
 
 The backend is written in JavaScript and built with the Strapi framework.
 
