@@ -42,7 +42,7 @@ The front-end is written in TypeScript and built with the NextJS framework and R
 
 Tailwind CCS was combined with Styled-Components. Every React functional component has its own separate styled-component tailwind file. This allows extremely fast ui changes without compromising code quality. Tailwind was chosen due to its ease of use and its effectiveness in providing a mobile first design that can be easily adjusted for wide screen monitors. 
 
-Authenticated users can be upload, store, and manage images using either the front end or back end CMS. The SAAS product, Cloudinary, is utilized to provide this functionality.
+Authenticated users can upload, store, and manage images using either the front end or back end CMS. The SAAS product, Cloudinary, is utilized to provide this functionality.
 
 Pagination and search functionality was implemented using Strapi's API and filtering fetches.  
 
