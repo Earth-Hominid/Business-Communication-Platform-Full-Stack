@@ -16,21 +16,11 @@ This full-stack application is demo of an application that was built to allow sm
 
 The application was built with authentication in order to  provide several authorization layers for users. 
 
-## Frontend
-
-The front-end is written in TypeScript and built with the NextJS framework and React functional components.
-
-Tailwind CCS was combined with Styled-Components. Every React functional component has its own separate styled-component tailwind file. This allows extremely fast ui changes without compromising code quality. Tailwind was chosen due to its ease of use and its effectiveness in providing a mobile first design that can be easily adjusted for wide screen monitors. 
-
-Authenticated users can be upload, store, and manage images using either the front end or back end CMS. The SAAS product, Cloudinary, is utilized to provide this functionality.
-
-Pagination and search functionality was implemented using Strapi's API and filtering fetches.  
-
 ### Authentication
 
 NextJS allows the JSON Webtoken to be stored server side, which is a great feature and negates the typical security risks (such as cross site scripting attacks) when the Webtoken is stored client side.
 
-Strapi is a community built, open source CMS. Routes can be created within it, that once hit can save the JSON web token in a server side cookie. We utilize this functionality to allow authenticated users to access route protected end points. 
+Strapi is a community built, open source CMS. In order to avoid sending authentication requests from our front end client to the backend, Strapi allows for routes to built within it. These API routes run serverside. Once accessed these routes send the request to Strapi and save the JSON Web token in an HTTP only cookie. Thus, the JSON Web Token can never be accessed on the client / browser side by JavaScript. 
 
 Visitors to the website can only access public articles. Once a user is authenticated, they will be granted access to reports published by other authenticated users. They have access to their own personal dashboard where they can create and edit articles and reports. Articles will be published publicly, whereas reports are published privately. 
 
@@ -43,6 +33,16 @@ Visitors to the website can only access public articles. Once a user is authenti
 
 <img width="444" alt="Screen Shot 2022-08-18 at 9 27 30 AM" src="https://user-images.githubusercontent.com/66766688/185410592-5498ce0c-9328-4316-a041-2249bb24ced2.png">
 
+
+## Frontend
+
+The front-end is written in TypeScript and built with the NextJS framework and React functional components.
+
+Tailwind CCS was combined with Styled-Components. Every React functional component has its own separate styled-component tailwind file. This allows extremely fast ui changes without compromising code quality. Tailwind was chosen due to its ease of use and its effectiveness in providing a mobile first design that can be easily adjusted for wide screen monitors. 
+
+Authenticated users can be upload, store, and manage images using either the front end or back end CMS. The SAAS product, Cloudinary, is utilized to provide this functionality.
+
+Pagination and search functionality was implemented using Strapi's API and filtering fetches.  
 
 ## Backend
 
