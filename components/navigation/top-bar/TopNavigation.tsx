@@ -8,8 +8,10 @@ import { HeaderContainer, ButtonContainer } from './Styles';
 const Navigation = ({
   handleNavigationMenuClick,
   navigationMenuToggle,
+  handleDemoAccountClick,
 }: {
   handleNavigationMenuClick: Function;
+  handleDemoAccountClick: Function;
   navigationMenuToggle: boolean;
 }) => {
   return (
@@ -24,6 +26,7 @@ const Navigation = ({
         <NavigationButtons
           handleNavigationMenuClick={handleNavigationMenuClick}
           navigationMenuToggle={navigationMenuToggle}
+          handleDemoAccountClick={handleDemoAccountClick}
         />
       </HeaderContainer>
     </>

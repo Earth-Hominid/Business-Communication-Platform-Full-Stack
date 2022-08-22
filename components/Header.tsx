@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import AuthContext from '@/context/AuthContext';
+import Link from 'next/link';
 import TopNavigation from './navigation/top-bar/TopNavigation';
 import BottomNavigation from './navigation/bottom-bar/BottomNavigation';
 import NavToolBar from './navigation/tool-bar/ToolBar';
@@ -18,6 +20,16 @@ const Header: React.FC<Props> = ({
 }) => {
   const [navigationMenuToggle, setNavigationMenuToggle] = useState(false);
 
+  // Demo account login extra code added:
+  const { login } = useContext(AuthContext);
+
+  const LoginDemoAccount = () => {
+    let email = 'demoaccount@demoaccount.ca';
+    let password = 'demoaccount123';
+
+    login({ email, password });
+  };
+
   const toggleNavigationButton = () => {
     if (navigationMenuToggle) {
       setNavigationMenuToggle(false);
@@ -33,11 +45,16 @@ const Header: React.FC<Props> = ({
     toggleNavigationButton();
   };
 
+  const handleDemoAccountClick = () => {
+    LoginDemoAccount();
+  };
+
   return (
     <>
       <TopNavigation
         handleNavigationMenuClick={handleNavigationMenuClick}
         navigationMenuToggle={navigationMenuToggle}
+        handleDemoAccountClick={handleDemoAccountClick}
       />
       {navigationMenuToggle ? <BottomNavigation /> : ''}
       <NavToolBar

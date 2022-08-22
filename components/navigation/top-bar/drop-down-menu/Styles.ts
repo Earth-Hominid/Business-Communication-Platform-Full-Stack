@@ -3,14 +3,13 @@ import tw from 'tailwind-styled-components';
 export const MainContainer = tw.div`
   flex 
   flex-row 
- 
 `;
 
 export const SubContainer = tw.div`
   flex 
   flex-row 
   items-center 
-  mx-6
+  lg:mx-6
   lg:min-w-[150px]
   xl:min-w-[200px]
   relative

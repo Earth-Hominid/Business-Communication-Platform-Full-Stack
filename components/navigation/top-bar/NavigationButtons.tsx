@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useContext } from 'react';
 import Link from 'next/link';
 import AuthContext from '@/context/AuthContext';
 import {
@@ -17,6 +17,7 @@ import {
   SignUpButtonLink,
   LogoutButtonLink,
   LoginButtonLink,
+  DemoAccountButton,
   BlueIconWrap,
   IndigoIconWrap,
   SlateIconWrap,
@@ -25,8 +26,10 @@ import {
 const NavigationButtons = ({
   handleNavigationMenuClick,
   navigationMenuToggle,
+  handleDemoAccountClick,
 }: {
   handleNavigationMenuClick: Function;
+  handleDemoAccountClick: Function;
   navigationMenuToggle: boolean;
 }) => {
   const router = useRouter();
@@ -67,6 +70,9 @@ const NavigationButtons = ({
             </>
           ) : (
             <>
+              <DemoAccountButton onClick={handleDemoAccountClick}>
+                Demo Account
+              </DemoAccountButton>
               <LoginButtonLink onClick={handleAccountClick}>
                 Já é membro?
               </LoginButtonLink>

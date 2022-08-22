@@ -36,7 +36,10 @@ export const ButtonContainer = tw.div`
   justify-end
   hidden
   md:inline-flex
-  space-x-3
+ space-x-1
+ mx-1
+ lg:mx-2
+ lg:space-x-6
 `;
 
 export const HamburgerContainer = tw.div`
@@ -45,8 +48,11 @@ export const HamburgerContainer = tw.div`
 
 export const SignUpButtonLink = tw.button`
   hidden md:inline-flex
+  text-sm
+  lg:text-base
   text-white
   bg-sky-500
+  whitespace-nowrap
   border-transparent
   px-2
   py-1
@@ -65,6 +71,9 @@ export const LoginButtonLink = tw.button`
   hidden md:inline-flex
   border-2
   text-slate-600
+  text-sm
+   lg:text-base
+  whitespace-nowrap
   bg-white
   border-transparent
   rounded-lg
@@ -78,7 +87,27 @@ export const LoginButtonLink = tw.button`
   ease-in-out
   py-1
   px-2
-  
+`;
+
+export const DemoAccountButton = tw.button`
+  hidden md:inline-flex
+  border-2
+  text-white
+  border-blue-500
+  bg-blue-500
+  text-sm
+   lg:text-base
+  px-2
+  py-1
+  rounded-lg
+  cursor-pointer
+  hover:text-blue-500
+  hover:bg-white
+  hover:border-2
+  transition
+  duration-300
+  ease-in-out
+  whitespace-nowrap
 `;
 
 export const LogoutButtonLink = tw.button`
@@ -96,25 +125,6 @@ export const LogoutButtonLink = tw.button`
   hover:border-2
   transition
   duration-300
-  ease-in-out
-`;
-
-export const ButtonLink = tw.button`
-  text-stone-700
-  hover:text-indigo-600
-  hidden 
-  md:inline-flex 
-  hover:bg-white
-  px-2 
-  py-1 
-  rounded-lg
-  cursor-pointer
-  hover:border-indigo-600
-  border-transparent
-  border-2
-  hover:border-2
-  duration-300
-  transition
   ease-in-out
 `;
 
