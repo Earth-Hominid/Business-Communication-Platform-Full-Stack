@@ -19,22 +19,23 @@ export const ActionButtonHolder = tw.div`
 export const NavigationMenu = tw.div`
 `;
 
-export const ThemeButton = tw.button`
+export const DemoAccountButton = tw.button`
   flex 
   items-center
   text-sm 
   font-semibold 
-  text-stone-700 
+  bg-blue-500
+  text-white
+  hover:text-blue-500
   border-transparent
   border-2
   py-1 
   px-2 
-  hover:bg-stone-100 
-  hover:border-2
-  hover:border-stone-700
+  hover:bg-white
+border-blue-500
   cursor-pointer
   rounded-md
-  duration-150
+  duration-300
   transition
   ease-in-out
 `;
@@ -51,7 +52,7 @@ export const ButtonLink = tw.button`
   hover:bg-white
   px-2 
   py-1 
-  rounded-3xl
+  rounded-lg
   cursor-pointer
   hover:border-indigo-600
   border-transparent

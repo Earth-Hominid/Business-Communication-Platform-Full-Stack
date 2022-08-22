@@ -1,6 +1,5 @@
-import { useState, useEffect, useContext } from 'react';
+import { useState, useContext } from 'react';
 import AuthContext from '@/context/AuthContext';
-import Link from 'next/link';
 import TopNavigation from './navigation/top-bar/TopNavigation';
 import BottomNavigation from './navigation/bottom-bar/BottomNavigation';
 import NavToolBar from './navigation/tool-bar/ToolBar';
@@ -56,7 +55,11 @@ const Header: React.FC<Props> = ({
         navigationMenuToggle={navigationMenuToggle}
         handleDemoAccountClick={handleDemoAccountClick}
       />
-      {navigationMenuToggle ? <BottomNavigation /> : ''}
+      {navigationMenuToggle ? (
+        <BottomNavigation handleDemoAccountClick={handleDemoAccountClick} />
+      ) : (
+        ''
+      )}
       <NavToolBar
         mainPage={mainPage}
         currentPage={currentPage}

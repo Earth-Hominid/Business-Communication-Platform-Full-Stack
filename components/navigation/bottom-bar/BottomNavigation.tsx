@@ -22,9 +22,14 @@ import {
   AddReportButton,
   AddArticleButton,
   DashboardButton,
+  DemoAccountButton,
 } from './Styles';
 
-const BottomNavigation = () => {
+const BottomNavigation = ({
+  handleDemoAccountClick,
+}: {
+  handleDemoAccountClick: Function;
+}) => {
   const router = useRouter();
 
   const handleLoginClick = () => {
@@ -112,6 +117,9 @@ const BottomNavigation = () => {
           </>
         ) : (
           <>
+            <DemoAccountButton onClick={handleDemoAccountClick}>
+              Demo Account
+            </DemoAccountButton>
             <ButtonLink onClick={handleLoginClick}>Já é membro?</ButtonLink>
             <SignUpButtonLink onClick={handleSignupClick}>
               Inscrever-se
