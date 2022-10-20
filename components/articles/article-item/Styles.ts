@@ -12,6 +12,7 @@ export const MainSection = tw.div`
 export const ArticleContainer = tw.div`
   grid 
   grid-cols-2
+  gap-1
   w-full
   m-2
   p-2.5
@@ -22,7 +23,7 @@ export const TextContainer = tw.div`
   flex
   flex-col
   text-left
-  ml-2
+  pl-2
 `;
 
 export const ArticleCategoryText = tw.h3`
@@ -52,7 +53,6 @@ export const ArticleTitle = tw.h2`
 `;
 
 export const ImageContainer = tw.div`
-  w-52
   h-auto
   sm:w-64
   md:w-80
