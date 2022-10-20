@@ -1,5 +1,11 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+
+const defaultTheme = require('tailwindcss/defaultTheme');
+
+/**
+ * @type {import('next').NextConfig}
+ */
+const nextConfig = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
@@ -8,6 +14,10 @@ module.exports = {
   theme: {
     container: {
       center: true,
+    },
+    screens: {
+      xs: '540px',
+      ...defaultTheme.screens,
     },
     extend: {
       fontFamily: {
@@ -32,3 +42,5 @@ module.exports = {
     fontFamily: true,
   },
 };
+
+module.exports = nextConfig;
