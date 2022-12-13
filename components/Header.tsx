@@ -23,8 +23,8 @@ const Header: React.FC<Props> = ({
   const { login } = useContext(AuthContext);
 
   const LoginDemoAccount = () => {
-    let email = 'demoaccount@demoaccount.ca';
-    let password = 'demoaccount123';
+    let email = 'userone@gmail.com';
+    let password = 'userone';
 
     login({ email, password });
   };

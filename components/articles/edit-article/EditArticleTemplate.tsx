@@ -7,6 +7,22 @@ import { API_URL } from '@/config/index';
 import { PhotographIcon } from '@heroicons/react/outline';
 import ImageUpload from '@/components/image/ImageUpload';
 import Modal from '@/components/modal/Modal';
+import {
+  FormPageTitle,
+  FormContainer,
+  StyledForm,
+  InputLabelContainer,
+  StyledInput,
+  StyledLabel,
+  FormButton,
+  WideTextArea,
+  ImageContainer,
+  ImageContainerHeading,
+  ImageContainerText,
+  IconContainer,
+  ImageButton,
+  ButtonHolder,
+} from './Styles';
 
 interface ArticleInterface {
   id: string;
@@ -28,23 +44,6 @@ interface ArticleInterface {
   created_at: string;
   updated_at: string;
 }
-
-import {
-  FormPageTitle,
-  FormContainer,
-  StyledForm,
-  InputLabelContainer,
-  StyledInput,
-  StyledLabel,
-  FormButton,
-  WideTextArea,
-  ImageContainer,
-  ImageContainerHeading,
-  ImageContainerText,
-  IconContainer,
-  ImageButton,
-  ButtonHolder,
-} from './Styles';
 
 const EditArticleTemplate = ({
   article,

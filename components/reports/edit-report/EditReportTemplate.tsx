@@ -7,6 +7,22 @@ import { API_URL } from '@/config/index';
 import { PhotographIcon } from '@heroicons/react/outline';
 import ReportImageUpload from '@/components/reports/report-image/ReportImageUpload';
 import Modal from '@/components/modal/Modal';
+import {
+  FormPageTitle,
+  FormContainer,
+  StyledForm,
+  InputLabelContainer,
+  StyledInput,
+  StyledLabel,
+  FormButton,
+  WideTextArea,
+  ImageContainer,
+  ImageContainerHeading,
+  ImageContainerText,
+  IconContainer,
+  ImageButton,
+  ButtonHolder,
+} from './Styles';
 interface ReportInterface {
   id: string;
   title: string;
@@ -27,23 +43,6 @@ interface ReportInterface {
   created_at: string;
   updated_at: string;
 }
-
-import {
-  FormPageTitle,
-  FormContainer,
-  StyledForm,
-  InputLabelContainer,
-  StyledInput,
-  StyledLabel,
-  FormButton,
-  WideTextArea,
-  ImageContainer,
-  ImageContainerHeading,
-  ImageContainerText,
-  IconContainer,
-  ImageButton,
-  ButtonHolder,
-} from './Styles';
 
 const EditReportTemplate = ({
   report,
