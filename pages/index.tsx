@@ -1,8 +1,6 @@
 import type { NextPage } from 'next';
-import Link from 'next/link';
 import Head from 'next/head';
 import { Layout } from '@/components/Layout';
-import Homepage from '@/components/homepage/Homepage';
 import { API_URL } from '@/config/index';
 import ArticleItem from '@/components/articles/article-item/ArticleItem';
 
